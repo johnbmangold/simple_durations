@@ -1,7 +1,6 @@
-import 'package:easy_durations/src/planck_duration.dart';
 import 'package:easy_durations/src/constants.dart';
 
-import 'package:easy_durations/src/easy_durations.dart';
+import 'package:easy_durations/easy_durations.dart';
 import 'package:test/test.dart';
 
 void main() {

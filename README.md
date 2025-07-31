@@ -1,39 +1,103 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
-
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/tools/pub/writing-package-pages).
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/to/develop-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+This package was inspired by the extensions in the `flutter_animate` package.
+Main durations are implemented along with several more eccentric units of time.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- Shorthand ways to create Durations
+- All the main units are covered
+- Durations smaller than microseconds use a new class `PlanckDuration`
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+```dart
+import 'package:easy_durations/easy_durations.dart';
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
 ```dart
-const like = 'sample';
+// returns Duration
+final  microseconds = 15.us;
+final longForm = 15.microseconds;
+final milliseconds = 10.ms;
+final days = 3.d;
+final longFormDays = 3.days;
+
+// returns PlanckDuration
+final yoctoseconds = 21.yoctoseconds;
+final rontoseconds = 500.rontoseconds;
 ```
+
+## Complete list of units
+
+- microseconds
+- milliseconds
+- seconds
+- minutes
+- hours
+- days
+- weeks
+- month February
+- month leap year February
+- month thirty days
+- month thirty-one days
+- year
+- leap year
+- planck
+- quectoseconds
+- rontoseconds
+- yoctoseconds
+- jiffy physics
+- jiffy electronics
+- zeptoseconds
+- attoseconds
+- atomic time
+- femtoseconds
+- svedbergs
+- picoseconds
+- nanoseconds
+- shakes
+- centiseconds
+- deciseconds
+- decaseconds
+- hectoseconds
+- moments
+- kiloseconds
+- megaseconds
+- gigaseconds
+- teraseconds
+- petaseconds
+- exaseconds
+- zettaseconds
+- yottaseconds
+- ronnaseconds
+- quettaseconds
+- millidays
+- centidays
+- decidays
+- decadays
+- fortnights
+- quarantines
+- hectodays
+- lunar years
+- tropical year
+- Gregorian year
+- sidereal year
+- semester
+- olympiad
+- lustrum
+- decade
+- indiction
+- jubilee
+- century
+- millenia
+- age
+- megaannum
+- galactic year
+- eon
+- kalpa
 
 ## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+To contribute or file issues:
+https://github.com/johnbmangold/easy_durations
