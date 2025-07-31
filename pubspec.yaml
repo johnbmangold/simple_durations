@@ -1,0 +1,15 @@
+name: easy_durations
+description: "A new Flutter package project."
+version: 0.0.1
+homepage:
+
+environment:
+  sdk: ^3.8.0
+
+dependencies:
+
+dev_dependencies:
+  flutter_lints: ^6.0.0
+  test: ^1.25.15
+
+flutter:
