@@ -10,7 +10,7 @@ Main durations are implemented along with several more eccentric units of time.
 ## Getting started
 
 ```dart
-import 'package:easy_durations/easy_durations.dart';
+import 'package:simple_durations/simple_durations.dart';
 ```
 
 ## Usage

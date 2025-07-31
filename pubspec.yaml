@@ -1,4 +1,4 @@
-name: easy_durations
+name: simple_durations
 description: "Int extensions to easily create a Duration"
 version: 1.0.0
 repository: https://github.com/johnbmangold/easy_durations

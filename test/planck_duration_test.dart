@@ -1,4 +1,4 @@
-import 'package:easy_durations/easy_durations.dart';
+import 'package:simple_durations/simple_durations.dart';
 import 'package:test/test.dart';
 
 void main() {

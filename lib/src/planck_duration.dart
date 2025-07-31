@@ -1,4 +1,4 @@
-import 'package:easy_durations/src/constants.dart';
+import 'package:simple_durations/simple_durations.dart';
 
 class PlanckDuration {
   const PlanckDuration({

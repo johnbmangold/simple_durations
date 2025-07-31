@@ -1,10 +1,8 @@
-import 'package:easy_durations/src/constants.dart';
-
-import 'package:easy_durations/easy_durations.dart';
+import 'package:simple_durations/simple_durations.dart';
 import 'package:test/test.dart';
 
 void main() {
-  group('EasyDurations', () {
+  group('SimpleDurations', () {
     test('should return correct microseconds duration', () {
       expect(10.um, equals(Duration(microseconds: 10)));
       expect(10.microseconds, equals(Duration(microseconds: 10)));

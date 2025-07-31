@@ -1,9 +1,8 @@
 // ignore_for_file: non_constant_identifier_names
 
-import 'package:easy_durations/src/constants.dart';
-import 'package:easy_durations/src/planck_duration.dart';
+import 'package:simple_durations/simple_durations.dart';
 
-extension EasyDurations on int {
+extension SimpleDurations on int {
   Duration get um => Duration(microseconds: this);
   Duration get microseconds => Duration(microseconds: this);
   Duration get ms => Duration(milliseconds: this);
