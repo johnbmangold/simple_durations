@@ -1,6 +1,6 @@
 name: simple_durations
-description: "Int extensions to easily create a Duration"
-version: 1.0.1
+description: "Extensions on int to easily create direction directly from ints. Can be used for units as small as planck time all the way up to galactic years and beyond."
+version: 1.0.2
 repository: https://github.com/johnbmangold/easy_durations
 issue_tracker: https://github.com/johnbmangold/easy_durations/issues
 

@@ -1,3 +1,7 @@
+## 1.0.2
+- added example
+- added better description to pubspec
+
 ## 1.0.1
 - added very_good_analysis and documented everything
 
