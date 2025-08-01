@@ -100,4 +100,4 @@ final rontoseconds = 500.rontoseconds;
 ## Additional information
 
 To contribute or file issues:
-https://github.com/johnbmangold/easy_durations
+https://github.com/johnbmangold/simple_durations

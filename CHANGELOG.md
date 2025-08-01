@@ -1,3 +1,6 @@
+## 1.0.3
+- updated repo url to 'simple_durations' instead of 'easy_durations'
+
 ## 1.0.2
 - added example
 - added better description to pubspec
