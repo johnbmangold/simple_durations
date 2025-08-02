@@ -494,5 +494,82 @@ void main() {
       expect(1.kalpa, equals(Duration(days: 1 * DAYS_IN_YEAR * KALPA.toInt())));
       expect(2.kalpa, equals(Duration(days: 2 * DAYS_IN_YEAR * KALPA.toInt())));
     });
+
+    test('decimalSeconds should return the correct duration', () {
+      // Test with a simple integer value
+      final duration1 = 1.decimalSeconds;
+      expect(
+        duration1,
+        equals(
+          Duration(microseconds: 1 * MICROSECONDS_IN_DECIMAL_SECOND.toInt()),
+        ),
+      );
+
+      // Test with a decimal value
+      final duration2 = 2.decimalSeconds;
+      expect(
+        duration2,
+        equals(
+          Duration(microseconds: 2 * MICROSECONDS_IN_DECIMAL_SECOND.toInt()),
+        ),
+      );
+    });
+
+    test('decimalMinutes should return the correct duration', () {
+      final microsecondsInDecimalMinute =
+          100 * MICROSECONDS_IN_DECIMAL_SECOND.toInt();
+
+      // Test with a simple integer value
+      final duration1 = 1.decimalMinutes;
+      expect(
+        duration1,
+        equals(Duration(microseconds: microsecondsInDecimalMinute)),
+      );
+
+      // Test with a decimal value
+      final duration2 = 1.decimalMinutes;
+      expect(
+        duration2,
+        equals(Duration(microseconds: 1 * microsecondsInDecimalMinute)),
+      );
+    });
+
+    test('decimalHours should return the correct duration', () {
+      final microsecondsInDecimalHour =
+          10000 * MICROSECONDS_IN_DECIMAL_SECOND.toInt();
+
+      // Test with a simple integer value
+      final duration1 = 1.decimalHours;
+      expect(
+        duration1,
+        equals(Duration(microseconds: microsecondsInDecimalHour)),
+      );
+
+      // Test with a decimal value
+      final duration2 = 1.decimalHours;
+      expect(
+        duration2,
+        equals(Duration(microseconds: 1 * microsecondsInDecimalHour)),
+      );
+    });
+
+    test('decimalDays should return the correct duration', () {
+      final microsecondsInDecimalDay =
+          1000000 * MICROSECONDS_IN_DECIMAL_SECOND.toInt();
+
+      // Test with a simple integer value
+      final duration1 = 1.decimalDays;
+      expect(
+        duration1,
+        equals(Duration(microseconds: microsecondsInDecimalDay)),
+      );
+
+      // Test with a decimal value
+      final duration2 = 2.decimalDays;
+      expect(
+        duration2,
+        equals(Duration(microseconds: 2 * microsecondsInDecimalDay)),
+      );
+    });
   });
 }

@@ -262,4 +262,23 @@ extension SimpleDurations on int {
 
   /// Kalpas as [Duration].
   Duration get kalpa => Duration(days: this * (DAYS_IN_YEAR * KALPA).toInt());
+
+  /// Decimal second as [Duration]
+  Duration get decimalSeconds =>
+      Duration(microseconds: this * MICROSECONDS_IN_DECIMAL_SECOND.toInt());
+
+  /// Decimal minute as [Duration]
+  Duration get decimalMinutes => Duration(
+    microseconds: this * 100 * MICROSECONDS_IN_DECIMAL_SECOND.toInt(),
+  );
+
+  /// Decimal hour as [Duration]
+  Duration get decimalHours => Duration(
+    microseconds: this * 10000 * MICROSECONDS_IN_DECIMAL_SECOND.toInt(),
+  );
+
+  /// Decimal day as [Duration]
+  Duration get decimalDays => Duration(
+    microseconds: this * 1000000 * MICROSECONDS_IN_DECIMAL_SECOND.toInt(),
+  );
 }

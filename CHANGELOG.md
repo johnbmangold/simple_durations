@@ -1,3 +1,10 @@
+## 1.0.4
+- implemented decimal seconds
+- implemented decimal minutes
+- implemented decimal hours
+- implemented decimal days
+- Viva la France!!!!
+
 ## 1.0.3
 - updated repo url to 'simple_durations' instead of 'easy_durations'
 

@@ -268,3 +268,6 @@ const MICROSECONDS_IN_SIDEREAL_YEAR = 3.15581497635460e13;
 
 /// Microseconds in two-thirds of a year.
 const MICROSECONDS_IN_TWO_THIRDS_OF_A_YEAR = 2.103945e+13;
+
+/// Microseconds in one decimal second
+const MICROSECONDS_IN_DECIMAL_SECOND = 8.64e5;
