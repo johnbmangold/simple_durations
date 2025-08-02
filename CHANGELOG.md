@@ -1,4 +1,5 @@
 ## 1.0.4
+- removed unneeded dependencies
 - implemented decimal seconds
 - implemented decimal minutes
 - implemented decimal hours
