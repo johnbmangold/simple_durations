@@ -96,6 +96,11 @@ final rontoseconds = 500.rontoseconds;
 - galactic year
 - eon
 - kalpa
+- decimal seconds
+- decimal minutes
+- decimal hours
+- decimal days
+- conan the barbarians
 
 ## Additional information
 

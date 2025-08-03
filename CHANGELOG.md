@@ -1,3 +1,6 @@
+## 1.0.6
+- updated readme
+
 ## 1.0.5
 - removed flutter dependency
 - To crush ya enemies.
