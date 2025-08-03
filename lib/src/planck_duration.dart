@@ -1,4 +1,4 @@
-import 'package:flutter/foundation.dart';
+import 'package:meta/meta.dart';
 import 'package:simple_durations/simple_durations.dart';
 
 /// Represents a duration measured in Planck times.

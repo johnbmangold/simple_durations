@@ -1,3 +1,7 @@
+## 1.0.5
+- removed flutter dependency
+- To crush ya enemies.
+
 ## 1.0.4
 - removed unneeded dependencies
 - implemented decimal seconds

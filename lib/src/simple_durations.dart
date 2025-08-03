@@ -281,4 +281,8 @@ extension SimpleDurations on int {
   Duration get decimalDays => Duration(
     microseconds: this * 1000000 * MICROSECONDS_IN_DECIMAL_SECOND.toInt(),
   );
+
+  /// For Crom
+  Duration get conanTheBarbarians =>
+      Duration(microseconds: this * MICROSECONDS_FOR_CROM.toInt());
 }

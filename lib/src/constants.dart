@@ -271,3 +271,6 @@ const MICROSECONDS_IN_TWO_THIRDS_OF_A_YEAR = 2.103945e+13;
 
 /// Microseconds in one decimal second
 const MICROSECONDS_IN_DECIMAL_SECOND = 8.64e5;
+
+/// Microseconds for Crom
+const MICROSECONDS_FOR_CROM = 7.74e9;

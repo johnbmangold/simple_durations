@@ -1,6 +1,6 @@
 name: simple_durations
 description: "Extensions on int to easily create Durations directly from ints. Can be used for units as small as planck time all the way up to galactic years and beyond."
-version: 1.0.4
+version: 1.0.5
 repository: https://github.com/johnbmangold/simple_durations
 issue_tracker: https://github.com/johnbmangold/simple_durations/issues
 
@@ -8,8 +8,7 @@ environment:
   sdk: ^3.8.0
 
 dependencies:
-  flutter:
-    sdk: flutter
+  meta: ^1.16.0
 
 dev_dependencies:
   test: ^1.25.15

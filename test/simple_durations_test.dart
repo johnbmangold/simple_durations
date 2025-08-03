@@ -571,5 +571,17 @@ void main() {
         equals(Duration(microseconds: 2 * microsecondsInDecimalDay)),
       );
     });
+
+    test('conanTheBarbarians', () {
+      expect(
+        1.conanTheBarbarians.inMicroseconds,
+        equals(MICROSECONDS_FOR_CROM),
+      );
+
+      expect(
+        2.conanTheBarbarians.inMicroseconds,
+        equals(2 * MICROSECONDS_FOR_CROM),
+      );
+    });
   });
 }
