@@ -1,3 +1,7 @@
+/// ignoring this rule to align with DateTime standard abbreviations
+// ignore_for_file: non_constant_identifier_names
+library;
+
 import 'package:simple_durations/simple_durations.dart';
 
 /// An extension on [int] that provides a convenient way to create [Duration]

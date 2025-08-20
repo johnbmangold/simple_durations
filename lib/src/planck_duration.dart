@@ -72,8 +72,6 @@ class PlanckDuration {
            quectoseconds * PLANCKS_IN_QUECTOSECOND +
            plancks;
 
-  const PlanckDuration._plancks(double plancks) : _plancks = plancks;
-
   final double _plancks;
 
   /// The number of whole planck times in this duration.
