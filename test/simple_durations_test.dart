@@ -118,6 +118,10 @@ void main() {
       expect(2.picoseconds.inPicoseconds, closeTo(2.0, 1e-10));
     });
 
+    test('should have the correct value for PICOSECOND', () {
+      expect(PICOSECOND, equals(1e-12));
+    });
+
     test('should return correct nanoseconds duration', () {
       expect(1.nanoseconds, equals(const PlanckDuration(nanoseconds: 1)));
       expect(2.nanoseconds.inPicoseconds, closeTo(2 * 1000.0, 1e-10));

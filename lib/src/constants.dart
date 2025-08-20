@@ -55,7 +55,7 @@ const FEMTOSECOND = 1e-15;
 const SVEDBERG = 1e-13;
 
 /// Picosecond (10^-12 seconds).
-const PICOSECOND = 1e12; // Should be 1e-12, check this value.
+const PICOSECOND = 1e-12;
 
 /// Nanosecond (10^-9 seconds).
 const NANOSECOND = 1e-9;
@@ -269,8 +269,9 @@ const MICROSECONDS_IN_SIDEREAL_YEAR = 3.15581497635460e13;
 /// Microseconds in two-thirds of a year.
 const MICROSECONDS_IN_TWO_THIRDS_OF_A_YEAR = 2.103945e+13;
 
-/// Microseconds in one decimal second
+/// Microseconds in one decimal second.
 const MICROSECONDS_IN_DECIMAL_SECOND = 8.64e5;
 
-/// Microseconds for Crom
+/// To crush your enemies, see them driven before you, and to hear the
+/// lamentation of their women.
 const MICROSECONDS_FOR_CROM = 7.74e9;
