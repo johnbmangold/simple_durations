@@ -1,288 +1,301 @@
+/// ignoring this rule to align with DateTime standard abbreviations
+// ignore_for_file: non_constant_identifier_names
+library;
+
 import 'package:simple_durations/simple_durations.dart';
 
-/// ignoring non_constant_identifier_names to align with standard
-/// DateTime abbreviations for Month
-// ignore_for_file: non_constant_identifier_names
-
-/// Extension to provide readable duration getters for [int].
+/// An extension on [int] that provides a convenient way to create [Duration]
+/// objects from integers.
+///
+/// This extension provides a number of getters that allow you to create
+/// [Duration] objects from integers, where the integer represents the
+/// duration in a particular unit of time. For example, you can use the
+/// [seconds] getter to create a [Duration] object that represents a
+/// duration of a certain number of seconds.
+///
+/// Example:
+///
+/// ```dart
+/// import 'package:simple_durations/simple_durations.dart';
+///
+/// void main() {
+///   final duration = 5.seconds;
+///   print(duration); // 0:00:05.000000
+/// }
+/// ```
 extension SimpleDurations on int {
-  /// Microseconds as [Duration].
+  /// Returns a [Duration] of this many microseconds.
   Duration get um => Duration(microseconds: this);
 
-  /// Microseconds as [Duration].
+  /// Returns a [Duration] of this many microseconds.
   Duration get microseconds => Duration(microseconds: this);
 
-  /// Milliseconds as [Duration].
+  /// Returns a [Duration] of this many milliseconds.
   Duration get ms => Duration(milliseconds: this);
 
-  /// Milliseconds as [Duration].
+  /// Returns a [Duration] of this many milliseconds.
   Duration get milliseconds => Duration(milliseconds: this);
 
-  /// Seconds as [Duration].
+  /// Returns a [Duration] of this many seconds.
   Duration get s => Duration(seconds: this);
 
-  /// Seconds as [Duration].
+  /// Returns a [Duration] of this many seconds.
   Duration get seconds => Duration(seconds: this);
 
-  /// Minutes as [Duration].
+  /// Returns a [Duration] of this many minutes.
   Duration get m => Duration(minutes: this);
 
-  /// Minutes as [Duration].
+  /// Returns a [Duration] of this many minutes.
   Duration get minutes => Duration(minutes: this);
 
-  /// February (non-leap) months as [Duration].
-  Duration get Mf => Duration(days: this * DAYS_IN_MONTH_FEB);
-
-  /// February (non-leap) months as [Duration].
-  Duration get monthFeb => Duration(days: this * DAYS_IN_MONTH_FEB);
-
-  /// February (leap) months as [Duration].
-  Duration get Mlf => Duration(days: this * DAYS_IN_MONTH_LEAP_FEB);
-
-  /// February (leap) months as [Duration].
-  Duration get monthLeapFeb => Duration(days: this * DAYS_IN_MONTH_LEAP_FEB);
-
-  /// 30-day months as [Duration].
-  Duration get M30 => Duration(days: this * DAYS_IN_MONTH_30);
-
-  /// 30-day months as [Duration].
-  Duration get month30 => Duration(days: this * DAYS_IN_MONTH_30);
-
-  /// 31-day months as [Duration].
-  Duration get M31 => Duration(days: this * DAYS_IN_MONTH_31);
-
-  /// 31-day months as [Duration].
-  Duration get month31 => Duration(days: this * DAYS_IN_MONTH_31);
-
-  /// Hours as [Duration].
+  /// Returns a [Duration] of this many hours.
   Duration get h => Duration(hours: this);
 
-  /// Hours as [Duration].
+  /// Returns a [Duration] of this many hours.
   Duration get hours => Duration(hours: this);
 
-  /// Days as [Duration].
+  /// Returns a [Duration] of this many days.
   Duration get d => Duration(days: this);
 
-  /// Days as [Duration].
+  /// Returns a [Duration] of this many days.
   Duration get days => Duration(days: this);
 
-  /// Weeks as [Duration].
+  /// Returns a [Duration] of this many weeks.
   Duration get w => Duration(days: this * DAYS_IN_WEEK);
 
-  /// Weeks as [Duration].
+  /// Returns a [Duration] of this many weeks.
   Duration get weeks => Duration(days: this * DAYS_IN_WEEK);
 
-  /// Years as [Duration].
+  /// Returns a [Duration] of this many years.
   Duration get y => Duration(days: this * DAYS_IN_YEAR);
 
-  /// Years as [Duration].
+  /// Returns a [Duration] of this many years.
   Duration get years => Duration(days: this * DAYS_IN_YEAR);
 
-  // --- Planck and subsecond measures ---
+  /// Returns a [Duration] of this many months, where each month has the
+  /// number of days in February in a non-leap year.
+  Duration get Mf => Duration(days: this * DAYS_IN_MONTH_FEB);
 
-  /// Planck times as [PlanckDuration].
+  /// Returns a [Duration] of this many months, where each month has the
+  /// number of days in February in a non-leap year.
+  Duration get monthFeb => Duration(days: this * DAYS_IN_MONTH_FEB);
+
+  /// Returns a [Duration] of this many months, where each month has the
+  /// number of days in February in a leap year.
+  Duration get Mlf => Duration(days: this * DAYS_IN_MONTH_LEAP_FEB);
+
+  /// Returns a [Duration] of this many months, where each month has the
+  /// number of days in February in a leap year.
+  Duration get monthLeapFeb => Duration(days: this * DAYS_IN_MONTH_LEAP_FEB);
+
+  /// Returns a [Duration] of this many months, where each month has 30 days.
+  Duration get M30 => Duration(days: this * DAYS_IN_MONTH_30);
+
+  /// Returns a [Duration] of this many months, where each month has 30 days.
+  Duration get month30 => Duration(days: this * DAYS_IN_MONTH_30);
+
+  /// Returns a [Duration] of this many months, where each month has 31 days.
+  Duration get M31 => Duration(days: this * DAYS_IN_MONTH_31);
+
+  /// Returns a [Duration] of this many months, where each month has 31 days.
+  Duration get month31 => Duration(days: this * DAYS_IN_MONTH_31);
+
+  /// Returns a [PlanckDuration] of this many planck times.
   PlanckDuration get plancks => PlanckDuration(plancks: this);
 
-  /// Quectoseconds as [PlanckDuration].
+  /// Returns a [PlanckDuration] of this many quectoseconds.
   PlanckDuration get quectoseconds => PlanckDuration(quectoseconds: this);
 
-  /// Rontoseconds as [PlanckDuration].
+  /// Returns a [PlanckDuration] of this many rontoseconds.
   PlanckDuration get rontoseconds => PlanckDuration(rontoseconds: this);
 
-  /// Yoctoseconds as [PlanckDuration].
+  /// Returns a [PlanckDuration] of this many yoctoseconds.
   PlanckDuration get yoctoseconds => PlanckDuration(yoctoseconds: this);
 
-  /// Physics jiffys as [PlanckDuration].
+  /// Returns a [PlanckDuration] of this many physics jiffys.
   PlanckDuration get jiffyPhysics => PlanckDuration(physicsJiffys: this);
 
-  /// Zeptoseconds as [PlanckDuration].
+  /// Returns a [PlanckDuration] of this many zeptoseconds.
   PlanckDuration get zeptosecond => PlanckDuration(zeptoseconds: this);
 
-  /// Attoseconds as [PlanckDuration].
+  /// Returns a [PlanckDuration] of this many attoseconds.
   PlanckDuration get attoseconds => PlanckDuration(attoseconds: this);
 
-  /// Atomic units as [PlanckDuration].
+  /// Returns a [PlanckDuration] of this many atomic units of time.
   PlanckDuration get atomics => PlanckDuration(atomics: this);
 
-  /// Femtoseconds as [PlanckDuration].
+  /// Returns a [PlanckDuration] of this many femtoseconds.
   PlanckDuration get femtoseconds => PlanckDuration(femtoseconds: this);
 
-  /// Svedbergs as [PlanckDuration].
+  /// Returns a [PlanckDuration] of this many svedbergs.
   PlanckDuration get svedbergs => PlanckDuration(svedbergs: this);
 
-  /// Picoseconds as [PlanckDuration].
+  /// Returns a [PlanckDuration] of this many picoseconds.
   PlanckDuration get picoseconds => PlanckDuration(picoseconds: this);
 
-  /// Nanoseconds as [PlanckDuration].
+  /// Returns a [PlanckDuration] of this many nanoseconds.
   PlanckDuration get nanoseconds => PlanckDuration(nanoseconds: this);
 
-  /// Shakes as [PlanckDuration].
+  /// Returns a [PlanckDuration] of this many shakes.
   PlanckDuration get shakes => PlanckDuration(shakes: this);
 
-  // --- Extended duration measures ---
-
-  /// Centiseconds as [Duration].
+  /// Returns a [Duration] of this many centiseconds.
   Duration get centiseconds =>
       Duration(microseconds: this * MICROSECONDS_IN_CENTISECOND);
 
-  /// Deciseconds as [Duration].
+  /// Returns a [Duration] of this many deciseconds.
   Duration get deciseconds =>
       Duration(microseconds: this * MICROSECONDS_IN_DECISECOND);
 
-  /// Decaseconds as [Duration].
+  /// Returns a [Duration] of this many decaseconds.
   Duration get decaseconds => Duration(seconds: this * DECASECOND);
 
-  /// Hectoseconds as [Duration].
+  /// Returns a [Duration] of this many hectoseconds.
   Duration get hectoseconds => Duration(seconds: this * HECTOSECOND);
 
-  /// Moments (90s) as [Duration].
+  /// Returns a [Duration] of this many moments.
   Duration get moments => Duration(seconds: this * MOMENT);
 
-  /// Kiloseconds as [Duration].
+  /// Returns a [Duration] of this many kiloseconds.
   Duration get kiloseconds => Duration(seconds: this * KILOSECOND.toInt());
 
-  /// Megaseconds as [Duration].
+  /// Returns a [Duration] of this many megaseconds.
   Duration get megaseconds => Duration(seconds: this * MEGASECOND.toInt());
 
-  /// Gigaseconds as [Duration].
+  /// Returns a [Duration] of this many gigaseconds.
   Duration get gigaseconds => Duration(seconds: this * GIGASECOND.toInt());
 
-  /// Teraseconds as [Duration].
+  /// Returns a [Duration] of this many teraseconds.
   Duration get teraseconds => Duration(seconds: this * TERASECOND.toInt());
 
-  /// Petaseconds as [Duration].
+  /// Returns a [Duration] of this many petaseconds.
   Duration get petaseconds => Duration(seconds: this * PETASECOND.toInt());
 
-  /// Exaseconds as [Duration].
+  /// Returns a [Duration] of this many exaseconds.
   Duration get exaseconds => Duration(seconds: this * EXASECOND.toInt());
 
-  /// Zettaseconds as [Duration].
+  /// Returns a [Duration] of this many zettaseconds.
   Duration get zettaseconds => Duration(seconds: this * ZETTASECOND.toInt());
 
-  /// Yottaseconds as [Duration].
+  /// Returns a [Duration] of this many yottaseconds.
   Duration get yottaseconds => Duration(seconds: this * YOTTASECOND.toInt());
 
-  /// Ronnaseconds as [Duration].
+  /// Returns a [Duration] of this many ronnaseconds.
   Duration get ronnaseconds => Duration(seconds: this * RONNASECOND.toInt());
 
-  /// Quettaseconds as [Duration].
+  /// Returns a [Duration] of this many quettaseconds.
   Duration get quettaseconds => Duration(seconds: this * QUETTASECOND.toInt());
 
-  // --- Day measures ---
-
-  /// Millidays as [Duration].
+  /// Returns a [Duration] of this many millidays.
   Duration get milliday =>
       Duration(microseconds: this * MICROSECONDS_IN_MILLIDAY.toInt());
 
-  /// Centidays as [Duration].
+  /// Returns a [Duration] of this many centidays.
   Duration get centiday =>
       Duration(microseconds: this * MICROSECONDS_IN_CENTIDAY.toInt());
 
-  /// Decidays as [Duration].
+  /// Returns a [Duration] of this many decidays.
   Duration get deciday =>
       Duration(microseconds: this * MICROSECONDS_IN_DECIDAY.toInt());
 
-  /// Decadays as [Duration].
+  /// Returns a [Duration] of this many decadays.
   Duration get decaday => Duration(days: this * DECADAY);
 
-  /// Fortnights as [Duration].
+  /// Returns a [Duration] of this many fortnights.
   Duration get fortnight => Duration(days: this * FORTNIGHT);
 
-  /// Quarantines (40 days) as [Duration].
+  /// Returns a [Duration] of this many quarantines.
   Duration get quarantine => Duration(days: this * QUARANTINE);
 
-  /// Hectodays as [Duration].
+  /// Returns a [Duration] of this many hectodays.
   Duration get hectoday => Duration(days: this * HECTODAY);
 
-  /// Lunar years as [Duration].
+  /// Returns a [Duration] of this many lunar years.
   Duration get lunarYear => Duration(
     days: this * 354,
     microseconds: this * MICROSECONDS_IN_37OFAYEAR.toInt(),
   );
 
-  /// Leap years as [Duration].
+  /// Returns a [Duration] of this many leap years.
   Duration get leapYear => Duration(days: this * LEAP_YEAR);
 
-  /// Tropical years as [Duration].
+  /// Returns a [Duration] of this many tropical years.
   Duration get tropicalYear =>
       Duration(microseconds: this * MICROSECONDS_IN_TROPICAL_YEAR.toInt());
 
-  /// Gregorian years as [Duration].
+  /// Returns a [Duration] of this many gregorian years.
   Duration get gregorianYear =>
       Duration(microseconds: this * MICROSECONDS_IN_GREGORIAN_YEAR.toInt());
 
-  /// Sidereal years as [Duration].
+  /// Returns a [Duration] of this many sidereal years.
   Duration get siderealYear =>
       Duration(microseconds: this * MICROSECONDS_IN_SIDEREAL_YEAR.toInt());
 
-  // --- Week measures ---
-
-  /// Semesters (18 weeks) as [Duration].
+  /// Returns a [Duration] of this many semesters.
   Duration get semester => Duration(days: this * (SEMESTER * DAYS_IN_WEEK));
 
-  // --- Year measures ---
-
-  /// Olympiads (4 years) as [Duration].
+  /// Returns a [Duration] of this many olympiads.
   Duration get olympiad => Duration(days: this * (DAYS_IN_YEAR * OLYMPIAD));
 
-  /// Lustrums (5 years) as [Duration].
+  /// Returns a [Duration] of this many lustrums.
   Duration get lustrum => Duration(days: this * (DAYS_IN_YEAR * LUSTRUM));
 
-  /// Decades (10 years) as [Duration].
+  /// Returns a [Duration] of this many decades.
   Duration get decade => Duration(days: this * (DAYS_IN_YEAR * DECADE));
 
-  /// Indictions (15 years) as [Duration].
+  /// Returns a [Duration] of this many indictions.
   Duration get indiction => Duration(days: this * (DAYS_IN_YEAR * INDICTION));
 
-  /// Jubilees (50 years) as [Duration].
+  /// Returns a [Duration] of this many jubilees.
   Duration get jubilee => Duration(days: this * (DAYS_IN_YEAR * JUBILEE));
 
-  /// Centuries (100 years) as [Duration].
+  /// Returns a [Duration] of this many centuries.
   Duration get century => Duration(days: this * (DAYS_IN_YEAR * CENTURY));
 
-  /// Millenia (1000 years) as [Duration].
+  /// Returns a [Duration] of this many millenia.
   Duration get millenia => Duration(days: this * (DAYS_IN_YEAR * MILLENIA));
 
-  /// Ages (2148 2/3 years) as [Duration].
+  /// Returns a [Duration] of this many ages.
   Duration get age => Duration(
     days: this * (DAYS_IN_YEAR * AGE_YEARS),
     microseconds: this * MICROSECONDS_IN_TWO_THIRDS_OF_A_YEAR.toInt(),
   );
 
-  /// Megaannum (1 million years) as [Duration].
+  /// Returns a [Duration] of this many megaannums.
   Duration get megaannum =>
       Duration(days: this * (DAYS_IN_YEAR * MEGAANNUM).toInt());
 
-  /// Galactic years as [Duration].
+  /// Returns a [Duration] of this many galactic years.
   Duration get galacticYear =>
       Duration(days: this * (DAYS_IN_YEAR * GALACTIC_YEAR).toInt());
 
-  /// Eons as [Duration].
+  /// Returns a [Duration] of this many eons.
   Duration get eon => Duration(days: this * (DAYS_IN_YEAR * EON).toInt());
 
-  /// Kalpas as [Duration].
+  /// Returns a [Duration] of this many kalpas.
   Duration get kalpa => Duration(days: this * (DAYS_IN_YEAR * KALPA).toInt());
 
-  /// Decimal second as [Duration]
+  /// Returns a [Duration] of this many decimal seconds.
   Duration get decimalSeconds =>
       Duration(microseconds: this * MICROSECONDS_IN_DECIMAL_SECOND.toInt());
 
-  /// Decimal minute as [Duration]
+  /// Returns a [Duration] of this many decimal minutes.
   Duration get decimalMinutes => Duration(
     microseconds: this * 100 * MICROSECONDS_IN_DECIMAL_SECOND.toInt(),
   );
 
-  /// Decimal hour as [Duration]
+  /// Returns a [Duration] of this many decimal hours.
   Duration get decimalHours => Duration(
     microseconds: this * 10000 * MICROSECONDS_IN_DECIMAL_SECOND.toInt(),
   );
 
-  /// Decimal day as [Duration]
+  /// Returns a [Duration] of this many decimal days.
   Duration get decimalDays => Duration(
     microseconds: this * 1000000 * MICROSECONDS_IN_DECIMAL_SECOND.toInt(),
   );
 
-  /// For Crom
+  /// Returns a [Duration] that is long enough to crush your enemies, see
+  /// them driven before you, and to hear the lamentation of their women.
   Duration get conanTheBarbarians =>
       Duration(microseconds: this * MICROSECONDS_FOR_CROM.toInt());
 }
