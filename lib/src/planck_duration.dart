@@ -7,13 +7,14 @@ import 'package:simple_durations/simple_durations.dart';
 /// microsecond, which is the smallest unit of time that can be represented
 /// by the [Duration] class.
 ///
-/// Planck time is the smallest meaningful unit of time in physics, approximately
-/// 5.39 × 10^-44 seconds. This class provides ultra-precise time measurements
-/// for scientific and high-precision applications.
+/// Planck time is the smallest meaningful unit of time in physics,
+/// approximately 5.39 × 10^-44 seconds. This class provides ultra-precise
+/// time measurements for scientific and high-precision applications.
 ///
 /// ## Features
 ///
-/// - **Ultra-precise measurements**: Support for durations smaller than microseconds
+/// - **Ultra-precise measurements**: Support for durations smaller than
+///   microseconds
 /// - **Arithmetic operations**: Add, subtract, multiply, and divide durations
 /// - **Comparison operations**: Compare durations using standard operators
 /// - **Unit conversion**: Convert to standard [Duration] objects
@@ -148,39 +149,55 @@ class PlanckDuration {
     // Validate that all parameters are non-negative
     if (days < 0) throw ArgumentError('Days cannot be negative: $days');
     if (hours < 0) throw ArgumentError('Hours cannot be negative: $hours');
-    if (minutes < 0)
+    if (minutes < 0) {
       throw ArgumentError('Minutes cannot be negative: $minutes');
-    if (seconds < 0)
+    }
+    if (seconds < 0) {
       throw ArgumentError('Seconds cannot be negative: $seconds');
-    if (milliseconds < 0)
+    }
+    if (milliseconds < 0) {
       throw ArgumentError('Milliseconds cannot be negative: $milliseconds');
-    if (microseconds < 0)
+    }
+    if (microseconds < 0) {
       throw ArgumentError('Microseconds cannot be negative: $microseconds');
+    }
     if (shakes < 0) throw ArgumentError('Shakes cannot be negative: $shakes');
-    if (nanoseconds < 0)
+    if (nanoseconds < 0) {
       throw ArgumentError('Nanoseconds cannot be negative: $nanoseconds');
-    if (picoseconds < 0)
+    }
+    if (picoseconds < 0) {
       throw ArgumentError('Picoseconds cannot be negative: $picoseconds');
-    if (svedbergs < 0)
+    }
+    if (svedbergs < 0) {
       throw ArgumentError('Svedbergs cannot be negative: $svedbergs');
-    if (femtoseconds < 0)
+    }
+    if (femtoseconds < 0) {
       throw ArgumentError('Femtoseconds cannot be negative: $femtoseconds');
-    if (atomics < 0)
+    }
+    if (atomics < 0) {
       throw ArgumentError('Atomics cannot be negative: $atomics');
-    if (attoseconds < 0)
+    }
+    if (attoseconds < 0) {
       throw ArgumentError('Attoseconds cannot be negative: $attoseconds');
-    if (zeptoseconds < 0)
+    }
+    if (zeptoseconds < 0) {
       throw ArgumentError('Zeptoseconds cannot be negative: $zeptoseconds');
-    if (physicsJiffys < 0)
+    }
+    if (physicsJiffys < 0) {
       throw ArgumentError('Physics jiffys cannot be negative: $physicsJiffys');
-    if (yoctoseconds < 0)
+    }
+    if (yoctoseconds < 0) {
       throw ArgumentError('Yoctoseconds cannot be negative: $yoctoseconds');
-    if (rontoseconds < 0)
+    }
+    if (rontoseconds < 0) {
       throw ArgumentError('Rontoseconds cannot be negative: $rontoseconds');
-    if (quectoseconds < 0)
+    }
+    if (quectoseconds < 0) {
       throw ArgumentError('Quectoseconds cannot be negative: $quectoseconds');
-    if (plancks < 0)
+    }
+    if (plancks < 0) {
       throw ArgumentError('Plancks cannot be negative: $plancks');
+    }
 
     return days * PLANCKS_IN_DAY +
         hours * PLANCKS_IN_HOUR +
@@ -287,7 +304,8 @@ class PlanckDuration {
 
   /// Subtracts [other] from this [PlanckDuration].
   ///
-  /// Returns a new [PlanckDuration] representing the difference of the two durations.
+  /// Returns a new [PlanckDuration] representing the difference of the two
+  /// durations.
   PlanckDuration operator -(PlanckDuration other) =>
       PlanckDuration(plancks: _plancks - other._plancks);
 
@@ -339,25 +357,35 @@ class PlanckDuration {
     } else if (_plancks >= PLANCKS_IN_SECOND) {
       return '${(_plancks / PLANCKS_IN_SECOND).toStringAsFixed(6)} seconds';
     } else if (_plancks >= PLANCKS_IN_MILLISECOND) {
-      return '${(_plancks / PLANCKS_IN_MILLISECOND).toStringAsFixed(6)} milliseconds';
+      return '${(_plancks / PLANCKS_IN_MILLISECOND).toStringAsFixed(6)} '
+          'milliseconds';
     } else if (_plancks >= PLANCKS_IN_MICROSECOND) {
-      return '${(_plancks / PLANCKS_IN_MICROSECOND).toStringAsFixed(6)} microseconds';
+      return '${(_plancks / PLANCKS_IN_MICROSECOND).toStringAsFixed(6)} '
+          'microseconds';
     } else if (_plancks >= PLANCKS_IN_NANOSECOND) {
-      return '${(_plancks / PLANCKS_IN_NANOSECOND).toStringAsFixed(6)} nanoseconds';
+      return '${(_plancks / PLANCKS_IN_NANOSECOND).toStringAsFixed(6)} '
+          'nanoseconds';
     } else if (_plancks >= PLANCKS_IN_PICOSECOND) {
-      return '${(_plancks / PLANCKS_IN_PICOSECOND).toStringAsFixed(6)} picoseconds';
+      return '${(_plancks / PLANCKS_IN_PICOSECOND).toStringAsFixed(6)} '
+          'picoseconds';
     } else if (_plancks >= PLANCKS_IN_FEMTOSECOND) {
-      return '${(_plancks / PLANCKS_IN_FEMTOSECOND).toStringAsFixed(6)} femtoseconds';
+      return '${(_plancks / PLANCKS_IN_FEMTOSECOND).toStringAsFixed(6)} '
+          'femtoseconds';
     } else if (_plancks >= PLANCKS_IN_ATTOSECOND) {
-      return '${(_plancks / PLANCKS_IN_ATTOSECOND).toStringAsFixed(6)} attoseconds';
+      return '${(_plancks / PLANCKS_IN_ATTOSECOND).toStringAsFixed(6)} '
+          'attoseconds';
     } else if (_plancks >= PLANCKS_IN_ZEPTOSECOND) {
-      return '${(_plancks / PLANCKS_IN_ZEPTOSECOND).toStringAsFixed(6)} zeptoseconds';
+      return '${(_plancks / PLANCKS_IN_ZEPTOSECOND).toStringAsFixed(6)} '
+          'zeptoseconds';
     } else if (_plancks >= PLANCKS_IN_YOCTOSECOND) {
-      return '${(_plancks / PLANCKS_IN_YOCTOSECOND).toStringAsFixed(6)} yoctoseconds';
+      return '${(_plancks / PLANCKS_IN_YOCTOSECOND).toStringAsFixed(6)} '
+          'yoctoseconds';
     } else if (_plancks >= PLANCKS_IN_RONTOSECOND) {
-      return '${(_plancks / PLANCKS_IN_RONTOSECOND).toStringAsFixed(6)} rontoseconds';
+      return '${(_plancks / PLANCKS_IN_RONTOSECOND).toStringAsFixed(6)} '
+          'rontoseconds';
     } else if (_plancks >= PLANCKS_IN_QUECTOSECOND) {
-      return '${(_plancks / PLANCKS_IN_QUECTOSECOND).toStringAsFixed(6)} quectoseconds';
+      return '${(_plancks / PLANCKS_IN_QUECTOSECOND).toStringAsFixed(6)} '
+          'quectoseconds';
     } else {
       return '${_plancks.toStringAsFixed(6)} planck times';
     }

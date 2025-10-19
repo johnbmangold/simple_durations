@@ -114,7 +114,7 @@ void main() {
     });
 
     test('toString displays appropriate units', () {
-      expect(PlanckDuration(plancks: 0).toString(), equals('0 planck times'));
+      expect(PlanckDuration().toString(), equals('0 planck times'));
       expect(PlanckDuration(seconds: 1).toString(), contains('seconds'));
       expect(
         PlanckDuration(milliseconds: 1).toString(),
@@ -198,7 +198,7 @@ void main() {
         throwsA(isA<ArgumentError>()),
       );
       expect(
-        () => PlanckDuration(plancks: -1.0),
+        () => PlanckDuration(plancks: -1),
         throwsA(isA<ArgumentError>()),
       );
     });

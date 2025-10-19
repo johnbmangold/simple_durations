@@ -1,3 +1,6 @@
+// Benchmark file intentionally uses print statements for output
+// ignore_for_file: avoid_print
+
 import 'package:simple_durations/simple_durations.dart';
 
 /// Performance benchmarks for simple_durations package.
@@ -24,7 +27,7 @@ Future<void> benchmarkDurationCreation() async {
   final stopwatch = Stopwatch()..start();
   const iterations = 1000000;
 
-  for (int i = 0; i < iterations; i++) {
+  for (var i = 0; i < iterations; i++) {
     final duration = i.seconds;
     // Prevent optimization
     if (duration.inSeconds == -1) break;
@@ -32,10 +35,12 @@ Future<void> benchmarkDurationCreation() async {
 
   stopwatch.stop();
   print(
-    '  Created $iterations Duration objects in ${stopwatch.elapsedMilliseconds}ms',
+    '  Created $iterations Duration objects in '
+    '${stopwatch.elapsedMilliseconds}ms',
   );
   print(
-    '  Average: ${stopwatch.elapsedMicroseconds / iterations}μs per creation\n',
+    '  Average: ${stopwatch.elapsedMicroseconds / iterations}μs per '
+    'creation\n',
   );
 }
 
@@ -46,7 +51,7 @@ Future<void> benchmarkPlanckDurationCreation() async {
   final stopwatch = Stopwatch()..start();
   const iterations = 100000;
 
-  for (int i = 0; i < iterations; i++) {
+  for (var i = 0; i < iterations; i++) {
     final duration = i.nanoseconds;
     // Prevent optimization
     if (duration.inNanoseconds == -1) break;
@@ -54,10 +59,12 @@ Future<void> benchmarkPlanckDurationCreation() async {
 
   stopwatch.stop();
   print(
-    '  Created $iterations PlanckDuration objects in ${stopwatch.elapsedMilliseconds}ms',
+    '  Created $iterations PlanckDuration objects in '
+    '${stopwatch.elapsedMilliseconds}ms',
   );
   print(
-    '  Average: ${stopwatch.elapsedMicroseconds / iterations}μs per creation\n',
+    '  Average: ${stopwatch.elapsedMicroseconds / iterations}μs per '
+    'creation\n',
   );
 }
 
@@ -74,35 +81,38 @@ Future<void> benchmarkArithmeticOperations() async {
 
   // Duration arithmetic
   var stopwatch = Stopwatch()..start();
-  for (int i = 0; i < iterations; i++) {
+  for (var i = 0; i < iterations; i++) {
     final result = duration1 + duration2;
     if (result.inSeconds == -1) break;
   }
   stopwatch.stop();
   print(
-    '  Duration addition: ${stopwatch.elapsedMicroseconds / iterations}μs per operation',
+    '  Duration addition: ${stopwatch.elapsedMicroseconds / iterations}μs per '
+    'operation',
   );
 
   // PlanckDuration arithmetic
   stopwatch = Stopwatch()..start();
-  for (int i = 0; i < iterations; i++) {
+  for (var i = 0; i < iterations; i++) {
     final result = planck1 + planck2;
     if (result.inNanoseconds == -1) break;
   }
   stopwatch.stop();
   print(
-    '  PlanckDuration addition: ${stopwatch.elapsedMicroseconds / iterations}μs per operation',
+    '  PlanckDuration addition: '
+    '${stopwatch.elapsedMicroseconds / iterations}μs per operation',
   );
 
   // PlanckDuration multiplication
   stopwatch = Stopwatch()..start();
-  for (int i = 0; i < iterations; i++) {
+  for (var i = 0; i < iterations; i++) {
     final result = planck1 * 2.5;
     if (result.inNanoseconds == -1) break;
   }
   stopwatch.stop();
   print(
-    '  PlanckDuration multiplication: ${stopwatch.elapsedMicroseconds / iterations}μs per operation\n',
+    '  PlanckDuration multiplication: '
+    '${stopwatch.elapsedMicroseconds / iterations}μs per operation\n',
   );
 }
 
@@ -115,24 +125,26 @@ Future<void> benchmarkLargeCalculations() async {
   // Large Duration calculations
   var stopwatch = Stopwatch()..start();
   var result = 0.seconds;
-  for (int i = 0; i < iterations; i++) {
+  for (var i = 0; i < iterations; i++) {
     result = result + i.seconds;
   }
   stopwatch.stop();
   print(
-    '  Large Duration sum ($iterations terms): ${stopwatch.elapsedMilliseconds}ms',
+    '  Large Duration sum ($iterations terms): '
+    '${stopwatch.elapsedMilliseconds}ms',
   );
   print('  Result: ${result.inSeconds} seconds');
 
   // Large PlanckDuration calculations
   stopwatch = Stopwatch()..start();
   var planckResult = 0.nanoseconds;
-  for (int i = 0; i < iterations; i++) {
+  for (var i = 0; i < iterations; i++) {
     planckResult = planckResult + i.nanoseconds;
   }
   stopwatch.stop();
   print(
-    '  Large PlanckDuration sum ($iterations terms): ${stopwatch.elapsedMilliseconds}ms',
+    '  Large PlanckDuration sum ($iterations terms): '
+    '${stopwatch.elapsedMilliseconds}ms',
   );
   print('  Result: ${planckResult.inNanoseconds} nanoseconds\n');
 }
@@ -146,24 +158,26 @@ Future<void> benchmarkToStringOperations() async {
   // Duration toString
   final duration = 123.seconds;
   var stopwatch = Stopwatch()..start();
-  for (int i = 0; i < iterations; i++) {
+  for (var i = 0; i < iterations; i++) {
     final str = duration.toString();
     if (str.isEmpty) break;
   }
   stopwatch.stop();
   print(
-    '  Duration toString: ${stopwatch.elapsedMicroseconds / iterations}μs per operation',
+    '  Duration toString: ${stopwatch.elapsedMicroseconds / iterations}μs per '
+    'operation',
   );
 
   // PlanckDuration toString
   final planckDuration = 123.nanoseconds;
   stopwatch = Stopwatch()..start();
-  for (int i = 0; i < iterations; i++) {
+  for (var i = 0; i < iterations; i++) {
     final str = planckDuration.toString();
     if (str.isEmpty) break;
   }
   stopwatch.stop();
   print(
-    '  PlanckDuration toString: ${stopwatch.elapsedMicroseconds / iterations}μs per operation\n',
+    '  PlanckDuration toString: '
+    '${stopwatch.elapsedMicroseconds / iterations}μs per operation\n',
   );
 }
