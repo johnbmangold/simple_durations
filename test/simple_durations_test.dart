@@ -64,57 +64,57 @@ void main() {
     });
 
     test('should return correct plancks duration', () {
-      expect(1.plancks, equals(const PlanckDuration(plancks: 1)));
+      expect(1.plancks, equals(PlanckDuration(plancks: 1)));
       expect(2.plancks.inPicoseconds, closeTo(2 * 5.39e-32, 1e-10));
     });
 
     test('should return correct quectoseconds duration', () {
-      expect(1.quectoseconds, equals(const PlanckDuration(quectoseconds: 1)));
+      expect(1.quectoseconds, equals(PlanckDuration(quectoseconds: 1)));
       expect(2.quectoseconds.inPicoseconds, closeTo(2 * 1e-18, 1e-10));
     });
 
     test('should return correct rontoseconds duration', () {
-      expect(1.rontoseconds, equals(const PlanckDuration(rontoseconds: 1)));
+      expect(1.rontoseconds, equals(PlanckDuration(rontoseconds: 1)));
       expect(2.rontoseconds.inPicoseconds, closeTo(2 * 1e-15, 1e-10));
     });
 
     test('should return correct yoctoseconds duration', () {
-      expect(1.yoctoseconds, const PlanckDuration(yoctoseconds: 1));
+      expect(1.yoctoseconds, PlanckDuration(yoctoseconds: 1));
       expect(2.yoctoseconds.inPicoseconds, closeTo(2 * 1e-12, 1e-10));
     });
 
     test('should return correct jiffyPhysics duration', () {
-      expect(1.jiffyPhysics, equals(const PlanckDuration(physicsJiffys: 1)));
+      expect(1.jiffyPhysics, equals(PlanckDuration(physicsJiffys: 1)));
       expect(2.jiffyPhysics.inPicoseconds, closeTo(2 * 3e-12, 1e-10));
     });
 
     test('should return correct zeptosecond duration', () {
-      expect(1.zeptosecond, equals(const PlanckDuration(zeptoseconds: 1)));
+      expect(1.zeptosecond, equals(PlanckDuration(zeptoseconds: 1)));
       expect(2.zeptosecond.inPicoseconds, closeTo(2 * 1e-9, 1e-10));
     });
 
     test('should return correct attoseconds duration', () {
-      expect(1.attoseconds, equals(const PlanckDuration(attoseconds: 1)));
+      expect(1.attoseconds, equals(PlanckDuration(attoseconds: 1)));
       expect(2.attoseconds.inPicoseconds, closeTo(2 * 1e-6, 1e-10));
     });
 
     test('should return correct atomics duration', () {
-      expect(1.atomics, equals(const PlanckDuration(atomics: 1)));
+      expect(1.atomics, equals(PlanckDuration(atomics: 1)));
       expect(2.atomics.inPlancks, closeTo(2 * 4.5304884038389e26, 1e-10));
     });
 
     test('should return correct femtoseconds duration', () {
-      expect(1.femtoseconds, equals(const PlanckDuration(femtoseconds: 1)));
+      expect(1.femtoseconds, equals(PlanckDuration(femtoseconds: 1)));
       expect(2.femtoseconds.inPicoseconds, closeTo(2 * 1e-3, 1e-10));
     });
 
     test('should return correct svedbergs duration', () {
-      expect(1.svedbergs, equals(const PlanckDuration(svedbergs: 1)));
+      expect(1.svedbergs, equals(PlanckDuration(svedbergs: 1)));
       expect(2.svedbergs.inPlancks, closeTo(2 * 1.872966181142e30, 1e-10));
     });
 
     test('should return correct picoseconds duration', () {
-      expect(1.picoseconds, equals(const PlanckDuration(picoseconds: 1)));
+      expect(1.picoseconds, equals(PlanckDuration(picoseconds: 1)));
       expect(2.picoseconds.inPicoseconds, closeTo(2.0, 1e-10));
     });
 
@@ -123,12 +123,12 @@ void main() {
     });
 
     test('should return correct nanoseconds duration', () {
-      expect(1.nanoseconds, equals(const PlanckDuration(nanoseconds: 1)));
+      expect(1.nanoseconds, equals(PlanckDuration(nanoseconds: 1)));
       expect(2.nanoseconds.inPicoseconds, closeTo(2 * 1000.0, 1e-10));
     });
 
     test('should return correct shakes duration', () {
-      expect(1.shakes, equals(const PlanckDuration(shakes: 1)));
+      expect(1.shakes, equals(PlanckDuration(shakes: 1)));
       expect(2.shakes.inPicoseconds, closeTo(2 * 10000.0, 1e-10));
     });
 
