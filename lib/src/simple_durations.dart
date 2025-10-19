@@ -101,7 +101,7 @@ extension SimpleDurations on int {
   Duration get month31 => Duration(days: this * DAYS_IN_MONTH_31);
 
   /// Returns a [PlanckDuration] of this many planck times.
-  PlanckDuration get plancks => PlanckDuration(plancks: this);
+  PlanckDuration get plancks => PlanckDuration(plancks: toDouble());
 
   /// Returns a [PlanckDuration] of this many quectoseconds.
   PlanckDuration get quectoseconds => PlanckDuration(quectoseconds: this);
@@ -298,4 +298,171 @@ extension SimpleDurations on int {
   /// them driven before you, and to hear the lamentation of their women.
   Duration get conanTheBarbarians =>
       Duration(microseconds: this * MICROSECONDS_FOR_CROM.toInt());
+}
+
+/// An extension on [double] that provides a convenient way to create [Duration]
+/// and [PlanckDuration] objects from floating-point numbers.
+///
+/// This extension provides the same functionality as [SimpleDurations] but
+/// allows for fractional time values, enabling more precise duration
+/// calculations.
+///
+/// Example:
+///
+/// ```dart
+/// import 'package:simple_durations/simple_durations.dart';
+///
+/// void main() {
+///   final duration = 2.5.seconds; // 2.5 seconds
+///   final planckDuration = 1.5.nanoseconds; // 1.5 nanoseconds
+///   print(duration); // 0:00:02.500000
+///   print(planckDuration); // 1.500000 nanoseconds
+/// }
+/// ```
+extension SimpleDurationsDouble on double {
+  /// Returns a [Duration] of this many microseconds.
+  Duration get um => Duration(microseconds: round());
+
+  /// Returns a [Duration] of this many microseconds.
+  Duration get microseconds => Duration(microseconds: round());
+
+  /// Returns a [Duration] of this many milliseconds.
+  Duration get ms => Duration(microseconds: (this * 1000).round());
+
+  /// Returns a [Duration] of this many milliseconds.
+  Duration get milliseconds => Duration(microseconds: (this * 1000).round());
+
+  /// Returns a [Duration] of this many seconds.
+  Duration get s => Duration(microseconds: (this * 1000000).round());
+
+  /// Returns a [Duration] of this many seconds.
+  Duration get seconds => Duration(microseconds: (this * 1000000).round());
+
+  /// Returns a [Duration] of this many minutes.
+  Duration get m => Duration(microseconds: (this * 60 * 1000000).round());
+
+  /// Returns a [Duration] of this many minutes.
+  Duration get minutes => Duration(microseconds: (this * 60 * 1000000).round());
+
+  /// Returns a [Duration] of this many hours.
+  Duration get h => Duration(microseconds: (this * 60 * 60 * 1000000).round());
+
+  /// Returns a [Duration] of this many hours.
+  Duration get hours =>
+      Duration(microseconds: (this * 60 * 60 * 1000000).round());
+
+  /// Returns a [Duration] of this many days.
+  Duration get d =>
+      Duration(microseconds: (this * 24 * 60 * 60 * 1000000).round());
+
+  /// Returns a [Duration] of this many days.
+  Duration get days =>
+      Duration(microseconds: (this * 24 * 60 * 60 * 1000000).round());
+
+  /// Returns a [Duration] of this many weeks.
+  Duration get w => Duration(
+    microseconds: (this * DAYS_IN_WEEK * 24 * 60 * 60 * 1000000).round(),
+  );
+
+  /// Returns a [Duration] of this many weeks.
+  Duration get weeks => Duration(
+    microseconds: (this * DAYS_IN_WEEK * 24 * 60 * 60 * 1000000).round(),
+  );
+
+  /// Returns a [Duration] of this many years.
+  Duration get y => Duration(
+    microseconds: (this * DAYS_IN_YEAR * 24 * 60 * 60 * 1000000).round(),
+  );
+
+  /// Returns a [Duration] of this many years.
+  Duration get years => Duration(
+    microseconds: (this * DAYS_IN_YEAR * 24 * 60 * 60 * 1000000).round(),
+  );
+
+  /// Returns a [PlanckDuration] of this many planck times.
+  PlanckDuration get plancks => PlanckDuration(plancks: this);
+
+  /// Returns a [PlanckDuration] of this many quectoseconds.
+  PlanckDuration get quectoseconds => PlanckDuration(quectoseconds: round());
+
+  /// Returns a [PlanckDuration] of this many rontoseconds.
+  PlanckDuration get rontoseconds => PlanckDuration(rontoseconds: round());
+
+  /// Returns a [PlanckDuration] of this many yoctoseconds.
+  PlanckDuration get yoctoseconds => PlanckDuration(yoctoseconds: round());
+
+  /// Returns a [PlanckDuration] of this many physics jiffys.
+  PlanckDuration get jiffyPhysics => PlanckDuration(physicsJiffys: round());
+
+  /// Returns a [PlanckDuration] of this many zeptoseconds.
+  PlanckDuration get zeptosecond => PlanckDuration(zeptoseconds: round());
+
+  /// Returns a [PlanckDuration] of this many attoseconds.
+  PlanckDuration get attoseconds => PlanckDuration(attoseconds: round());
+
+  /// Returns a [PlanckDuration] of this many atomic units of time.
+  PlanckDuration get atomics => PlanckDuration(atomics: round());
+
+  /// Returns a [PlanckDuration] of this many femtoseconds.
+  PlanckDuration get femtoseconds => PlanckDuration(femtoseconds: round());
+
+  /// Returns a [PlanckDuration] of this many svedbergs.
+  PlanckDuration get svedbergs => PlanckDuration(svedbergs: round());
+
+  /// Returns a [PlanckDuration] of this many picoseconds.
+  PlanckDuration get picoseconds => PlanckDuration(picoseconds: round());
+
+  /// Returns a [PlanckDuration] of this many nanoseconds.
+  PlanckDuration get nanoseconds => PlanckDuration(nanoseconds: round());
+
+  /// Returns a [PlanckDuration] of this many shakes.
+  PlanckDuration get shakes => PlanckDuration(shakes: round());
+
+  /// Returns a [Duration] of this many centiseconds.
+  Duration get centiseconds =>
+      Duration(microseconds: (this * MICROSECONDS_IN_CENTISECOND).round());
+
+  /// Returns a [Duration] of this many deciseconds.
+  Duration get deciseconds =>
+      Duration(microseconds: (this * MICROSECONDS_IN_DECISECOND).round());
+
+  /// Returns a [Duration] of this many decaseconds.
+  Duration get decaseconds => Duration(seconds: (this * DECASECOND).round());
+
+  /// Returns a [Duration] of this many hectoseconds.
+  Duration get hectoseconds => Duration(seconds: (this * HECTOSECOND).round());
+
+  /// Returns a [Duration] of this many moments.
+  Duration get moments => Duration(seconds: (this * MOMENT).round());
+
+  /// Returns a [Duration] of this many kiloseconds.
+  Duration get kiloseconds => Duration(seconds: (this * KILOSECOND).round());
+
+  /// Returns a [Duration] of this many megaseconds.
+  Duration get megaseconds => Duration(seconds: (this * MEGASECOND).round());
+
+  /// Returns a [Duration] of this many gigaseconds.
+  Duration get gigaseconds => Duration(seconds: (this * GIGASECOND).round());
+
+  /// Returns a [Duration] of this many teraseconds.
+  Duration get teraseconds => Duration(seconds: (this * TERASECOND).round());
+
+  /// Returns a [Duration] of this many petaseconds.
+  Duration get petaseconds => Duration(seconds: (this * PETASECOND).round());
+
+  /// Returns a [Duration] of this many exaseconds.
+  Duration get exaseconds => Duration(seconds: (this * EXASECOND).round());
+
+  /// Returns a [Duration] of this many zettaseconds.
+  Duration get zettaseconds => Duration(seconds: (this * ZETTASECOND).round());
+
+  /// Returns a [Duration] of this many yottaseconds.
+  Duration get yottaseconds => Duration(seconds: (this * YOTTASECOND).round());
+
+  /// Returns a [Duration] of this many ronnaseconds.
+  Duration get ronnaseconds => Duration(seconds: (this * RONNASECOND).round());
+
+  /// Returns a [Duration] of this many quettaseconds.
+  Duration get quettaseconds =>
+      Duration(seconds: (this * QUETTASECOND).round());
 }
