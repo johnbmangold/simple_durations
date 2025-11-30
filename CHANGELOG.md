@@ -29,6 +29,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated `PlanckDuration` to accept `double` for `plancks` parameter for better precision
 - Code formatting improvements to comply with Dart linting standards
 - Updated README.md with Buy Me a Coffee support section
+- SDK requirement set to `^3.8.0` for maximum compatibility (supports Dart 3.8.0 and above)
 
 ### Fixed
 - Better precision handling in double extensions
