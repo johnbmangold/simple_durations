@@ -44,7 +44,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Breaking Changes
 - `PlanckDuration` constructor is no longer `const` (removed to support runtime validation). Code using `const PlanckDuration(...)` will need to remove the `const` keyword.
 
-## [1.0.7] - 2025-01-XX
+## [1.0.7] - 2024-01-XX
 
 ### Added
 - Initial release with comprehensive time duration extensions
