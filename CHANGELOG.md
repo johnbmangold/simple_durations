@@ -7,12 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [2.0.1] - 2025-12-30
+## [2.0.1] - 2025-11-30
 
 ### Fixed
 - removed redundant buy me a coffee button
 
-## [2.0.0] - 2025-12-30
+## [2.0.0] - 2025-11-29
 
 **Note:** This is a major version bump due to a breaking change in the API. The `PlanckDuration` constructor is no longer `const` to support runtime validation. If you were using `const PlanckDuration(...)`, you'll need to remove the `const` keyword. This release also includes many new features and improvements.
 
