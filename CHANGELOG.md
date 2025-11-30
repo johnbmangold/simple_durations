@@ -7,9 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [1.2.0] - 2024-12-XX
+## [2.0.0] - 2024-12-XX
 
-**Note:** This is a minor version bump due to major new features. The `PlanckDuration` constructor is no longer `const` to support runtime validation. If you were using `const PlanckDuration(...)`, you'll need to remove the `const` keyword (this is a breaking change, but considered minor as const usage was likely rare).
+**Note:** This is a major version bump due to a breaking change in the API. The `PlanckDuration` constructor is no longer `const` to support runtime validation. If you were using `const PlanckDuration(...)`, you'll need to remove the `const` keyword. This release also includes many new features and improvements.
 
 ### Added
 - `toString()` method to `PlanckDuration` class for better debugging and display
