@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.1] - 2024-12-XX
+
 ### Added
 - `toString()` method to `PlanckDuration` class for better debugging and display
 - Arithmetic operators (`+`, `-`, `*`, `/`) to `PlanckDuration` class
@@ -16,14 +18,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `SimpleDurationsDouble` extension for `double` values with fractional precision
 - Comprehensive test coverage for new features and edge cases
 - Enhanced documentation with examples
+- Performance benchmarks in `benchmark/benchmark.dart`
+- CHANGELOG.md for tracking version history
 
 ### Changed
 - Improved error messages for negative value validation
 - Enhanced `PlanckDuration` constructor with validation
+- Updated `PlanckDuration` to accept `double` for `plancks` parameter for better precision
+- Code formatting improvements to comply with Dart linting standards
+- Updated README.md with Buy Me a Coffee support section
 
 ### Fixed
 - Better precision handling in double extensions
 - Improved toString() display logic for various time units
+- All linting issues resolved (line length, code formatting)
+- Removed `const` keyword from `PlanckDuration` constructor to support runtime validation
 
 ## [1.0.7] - 2024-01-XX
 
