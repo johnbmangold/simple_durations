@@ -7,10 +7,6 @@ If you find this package useful, consider supporting the project:
 
 [![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://www.buymeacoffee.com/johnbmangold)
 
-Or use the direct button:
-
-<a href="https://www.buymeacoffee.com/johnbmangold" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
-
 ## Features
 
 - Shorthand ways to create Durations
