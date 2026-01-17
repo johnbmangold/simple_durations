@@ -383,40 +383,40 @@ extension SimpleDurationsDouble on double {
   PlanckDuration get plancks => PlanckDuration(plancks: this);
 
   /// Returns a [PlanckDuration] of this many quectoseconds.
-  PlanckDuration get quectoseconds => PlanckDuration(quectoseconds: round());
+  PlanckDuration get quectoseconds => PlanckDuration(quectoseconds: this);
 
   /// Returns a [PlanckDuration] of this many rontoseconds.
-  PlanckDuration get rontoseconds => PlanckDuration(rontoseconds: round());
+  PlanckDuration get rontoseconds => PlanckDuration(rontoseconds: this);
 
   /// Returns a [PlanckDuration] of this many yoctoseconds.
-  PlanckDuration get yoctoseconds => PlanckDuration(yoctoseconds: round());
+  PlanckDuration get yoctoseconds => PlanckDuration(yoctoseconds: this);
 
   /// Returns a [PlanckDuration] of this many physics jiffys.
-  PlanckDuration get jiffyPhysics => PlanckDuration(physicsJiffys: round());
+  PlanckDuration get jiffyPhysics => PlanckDuration(physicsJiffys: this);
 
   /// Returns a [PlanckDuration] of this many zeptoseconds.
-  PlanckDuration get zeptosecond => PlanckDuration(zeptoseconds: round());
+  PlanckDuration get zeptosecond => PlanckDuration(zeptoseconds: this);
 
   /// Returns a [PlanckDuration] of this many attoseconds.
-  PlanckDuration get attoseconds => PlanckDuration(attoseconds: round());
+  PlanckDuration get attoseconds => PlanckDuration(attoseconds: this);
 
   /// Returns a [PlanckDuration] of this many atomic units of time.
-  PlanckDuration get atomics => PlanckDuration(atomics: round());
+  PlanckDuration get atomics => PlanckDuration(atomics: this);
 
   /// Returns a [PlanckDuration] of this many femtoseconds.
-  PlanckDuration get femtoseconds => PlanckDuration(femtoseconds: round());
+  PlanckDuration get femtoseconds => PlanckDuration(femtoseconds: this);
 
   /// Returns a [PlanckDuration] of this many svedbergs.
-  PlanckDuration get svedbergs => PlanckDuration(svedbergs: round());
+  PlanckDuration get svedbergs => PlanckDuration(svedbergs: this);
 
   /// Returns a [PlanckDuration] of this many picoseconds.
-  PlanckDuration get picoseconds => PlanckDuration(picoseconds: round());
+  PlanckDuration get picoseconds => PlanckDuration(picoseconds: this);
 
   /// Returns a [PlanckDuration] of this many nanoseconds.
-  PlanckDuration get nanoseconds => PlanckDuration(nanoseconds: round());
+  PlanckDuration get nanoseconds => PlanckDuration(nanoseconds: this);
 
   /// Returns a [PlanckDuration] of this many shakes.
-  PlanckDuration get shakes => PlanckDuration(shakes: round());
+  PlanckDuration get shakes => PlanckDuration(shakes: this);
 
   /// Returns a [Duration] of this many centiseconds.
   Duration get centiseconds =>

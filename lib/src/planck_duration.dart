@@ -58,7 +58,7 @@ import 'package:simple_durations/simple_durations.dart';
 /// - Conversion to [Duration] may lose precision for very small values
 /// - All arithmetic operations preserve precision within floating-point limits
 @immutable
-class PlanckDuration {
+class PlanckDuration implements Comparable<PlanckDuration> {
   /// Creates a new [PlanckDuration] object.
   ///
   /// The duration can be specified in any of the following units:
@@ -83,24 +83,24 @@ class PlanckDuration {
   /// * [quectoseconds]
   /// * [plancks]
   PlanckDuration({
-    int days = 0,
-    int hours = 0,
-    int minutes = 0,
-    int seconds = 0,
-    int milliseconds = 0,
-    int microseconds = 0,
-    int shakes = 0,
-    int nanoseconds = 0,
-    int picoseconds = 0,
-    int svedbergs = 0,
-    int femtoseconds = 0,
-    int atomics = 0,
-    int attoseconds = 0,
-    int zeptoseconds = 0,
-    int physicsJiffys = 0,
-    int yoctoseconds = 0,
-    int rontoseconds = 0,
-    int quectoseconds = 0,
+    num days = 0,
+    num hours = 0,
+    num minutes = 0,
+    num seconds = 0,
+    num milliseconds = 0,
+    num microseconds = 0,
+    num shakes = 0,
+    num nanoseconds = 0,
+    num picoseconds = 0,
+    num svedbergs = 0,
+    num femtoseconds = 0,
+    num atomics = 0,
+    num attoseconds = 0,
+    num zeptoseconds = 0,
+    num physicsJiffys = 0,
+    num yoctoseconds = 0,
+    num rontoseconds = 0,
+    num quectoseconds = 0,
     double plancks = 0,
   }) : _plancks = _validateAndCalculate(
          days,
@@ -126,24 +126,24 @@ class PlanckDuration {
 
   /// Validates input parameters and calculates total planck times.
   static double _validateAndCalculate(
-    int days,
-    int hours,
-    int minutes,
-    int seconds,
-    int milliseconds,
-    int microseconds,
-    int shakes,
-    int nanoseconds,
-    int picoseconds,
-    int svedbergs,
-    int femtoseconds,
-    int atomics,
-    int attoseconds,
-    int zeptoseconds,
-    int physicsJiffys,
-    int yoctoseconds,
-    int rontoseconds,
-    int quectoseconds,
+    num days,
+    num hours,
+    num minutes,
+    num seconds,
+    num milliseconds,
+    num microseconds,
+    num shakes,
+    num nanoseconds,
+    num picoseconds,
+    num svedbergs,
+    num femtoseconds,
+    num atomics,
+    num attoseconds,
+    num zeptoseconds,
+    num physicsJiffys,
+    num yoctoseconds,
+    num rontoseconds,
+    num quectoseconds,
     double plancks,
   ) {
     // Validate that all parameters are non-negative
