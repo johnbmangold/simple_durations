@@ -202,6 +202,17 @@ void main() {
         throwsA(isA<ArgumentError>()),
       );
     });
+    test('Comparable interface implemented', () {
+      final list = [
+        PlanckDuration(seconds: 10),
+        PlanckDuration(seconds: 1),
+        PlanckDuration(seconds: 5),
+      ];
+      list.sort();
+      expect(list[0].inSeconds, equals(1));
+      expect(list[1].inSeconds, equals(5));
+      expect(list[2].inSeconds, equals(10));
+    });
   });
 
   group('SimpleDurationsDouble', () {
@@ -209,10 +220,8 @@ void main() {
       expect(2.5.seconds.inMicroseconds, equals(2500000));
       expect(1.5.milliseconds.inMicroseconds, equals(1500));
       expect(0.5.minutes.inSeconds, equals(30));
-      // Note: double extensions round to integers, so 1.5 becomes 2
-      expect(1.5.nanoseconds.inPicoseconds, closeTo(2000.0, 1e-6));
-      // Note: double extensions round to integers, so 2.5 becomes 3
-      expect(2.5.picoseconds.inFemtoseconds, closeTo(3000.0, 1e-10));
+      expect(1.5.nanoseconds.inPicoseconds, closeTo(1500.0, 1e-6));
+      expect(2.5.picoseconds.inFemtoseconds, closeTo(2500.0, 1e-10));
     });
 
     test('double extensions handle fractional values', () {
