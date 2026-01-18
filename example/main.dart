@@ -1,3 +1,6 @@
+// This example uses print to show output to the user.
+// ignore_for_file: avoid_print
+
 import 'package:simple_durations/simple_durations.dart';
 
 void main() {

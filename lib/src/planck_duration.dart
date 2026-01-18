@@ -294,6 +294,7 @@ class PlanckDuration implements Comparable<PlanckDuration> {
   ///
   /// A [PlanckDuration] is shorter than another [PlanckDuration] if it has a
   /// smaller number of planck times.
+  @override
   int compareTo(PlanckDuration other) => _plancks.compareTo(other._plancks);
 
   /// Adds this [PlanckDuration] to [other].

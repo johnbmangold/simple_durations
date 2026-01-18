@@ -207,8 +207,7 @@ void main() {
         PlanckDuration(seconds: 10),
         PlanckDuration(seconds: 1),
         PlanckDuration(seconds: 5),
-      ];
-      list.sort();
+      ]..sort();
       expect(list[0].inSeconds, equals(1));
       expect(list[1].inSeconds, equals(5));
       expect(list[2].inSeconds, equals(10));
