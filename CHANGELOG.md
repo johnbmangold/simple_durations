@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.1.1] - 2026-01-18
+
+### Fixed
+- Internal linting issues and code consistency across `lib`, `test`, and `example`.
+- Added missing `@override` to `PlanckDuration.compareTo`.
+
 ## [2.1.0] - 2026-01-17
 
 ### Added
