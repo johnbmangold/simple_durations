@@ -60,9 +60,6 @@ const PICOSECOND = 1e-12;
 /// Nanosecond (10^-9 seconds).
 const NANOSECOND = 1e-9;
 
-/// Shake (10^-8 seconds).
-const SHAKE = 1e-8;
-
 /// Centisecond (0.01 seconds).
 const CENTISECOND = 1e-2;
 
