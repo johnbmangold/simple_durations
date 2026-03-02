@@ -201,6 +201,10 @@ void main() {
         () => PlanckDuration(plancks: -1),
         throwsA(isA<ArgumentError>()),
       );
+      expect(
+        () => PlanckDuration(microseconds: -1),
+        throwsA(isA<ArgumentError>()),
+      );
     });
     test('Comparable interface implemented', () {
       final list = [
