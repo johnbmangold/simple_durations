@@ -124,6 +124,20 @@ class PlanckDuration implements Comparable<PlanckDuration> {
          plancks,
        );
 
+  /// Creates a new [PlanckDuration] from a total number of planck times.
+  ///
+  /// This factory is more efficient than the default constructor when only
+  /// planck times are known, as it avoids validating 19 separate parameters.
+  factory PlanckDuration.fromPlancks(double plancks) {
+    if (plancks < 0) {
+      throw ArgumentError('Plancks cannot be negative: $plancks');
+    }
+    return PlanckDuration._(plancks);
+  }
+
+  /// Internal constructor for fast instantiation.
+  PlanckDuration._(this._plancks);
+
   /// Validates input parameters and calculates total planck times.
   static double _validateAndCalculate(
     num days,
@@ -301,26 +315,26 @@ class PlanckDuration implements Comparable<PlanckDuration> {
   ///
   /// Returns a new [PlanckDuration] representing the sum of the two durations.
   PlanckDuration operator +(PlanckDuration other) =>
-      PlanckDuration(plancks: _plancks + other._plancks);
+      PlanckDuration._(_plancks + other._plancks);
 
   /// Subtracts [other] from this [PlanckDuration].
   ///
   /// Returns a new [PlanckDuration] representing the difference of the two
   /// durations.
   PlanckDuration operator -(PlanckDuration other) =>
-      PlanckDuration(plancks: _plancks - other._plancks);
+      PlanckDuration.fromPlancks(_plancks - other._plancks);
 
   /// Multiplies this [PlanckDuration] by [factor].
   ///
   /// Returns a new [PlanckDuration] representing the scaled duration.
   PlanckDuration operator *(double factor) =>
-      PlanckDuration(plancks: _plancks * factor);
+      PlanckDuration.fromPlancks(_plancks * factor);
 
   /// Divides this [PlanckDuration] by [divisor].
   ///
   /// Returns a new [PlanckDuration] representing the divided duration.
   PlanckDuration operator /(double divisor) =>
-      PlanckDuration(plancks: _plancks / divisor);
+      PlanckDuration.fromPlancks(_plancks / divisor);
 
   /// Returns true if this [PlanckDuration] is less than [other].
   bool operator <(PlanckDuration other) => _plancks < other._plancks;
