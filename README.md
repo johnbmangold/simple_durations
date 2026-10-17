@@ -9,9 +9,14 @@ If you find this package useful, consider supporting the project:
 
 ## Features
 
-- Shorthand ways to create Durations
-- All the main units are covered
-- Durations smaller than microseconds use a new class `PlanckDuration`
+- **Shorthand & Natural syntax**: Easily create Durations directly from `int`, `double`, or `num` (e.g. `5.s`, `1.second`, `5.seconds`, `500.ms`, `15.us`).
+- **Singular and Plural**: Support for both forms (`1.minute` and `5.minutes`, `1.fortnight` and `2.fortnights`).
+- **All units covered**: From standard units to historical, astronomical, and custom units (fortnights, decades, centuries, eons, and Conan the Barbarians).
+- **Sub-microsecond precision with `PlanckDuration`**: Nanoseconds, picoseconds, femtoseconds, attoseconds, yoctoseconds, and Planck time.
+- **Convenient Duration Utilities**:
+  - `await 500.ms.delay()` for clean asynchronous delays.
+  - Higher-level unit conversions: `inWeeks`, `inYears`, `inFortnights`, `inDecades`, `inCenturies`.
+  - Seamless two-way conversion: `duration.toPlanckDuration()` and `planckDuration.toDuration()`.
 
 ## Getting started
 
@@ -22,16 +27,37 @@ import 'package:simple_durations/simple_durations.dart';
 ## Usage
 
 ```dart
-// returns Duration
-final  microseconds = 15.us;
-final longForm = 15.microseconds;
-final milliseconds = 10.ms;
-final days = 3.d;
-final longFormDays = 3.days;
+// Returns standard Duration
+final micro = 15.us; // or 15.microseconds / 1.microsecond
+final milli = 10.ms; // or 10.milliseconds / 1.millisecond
+final secs = 5.s; // or 5.seconds / 1.second
+final days = 3.d; // or 3.days / 1.day
+final weeks = 2.w; // or 2.weeks / 1.week
 
-// returns PlanckDuration
-final yoctoseconds = 21.yoctoseconds;
-final rontoseconds = 500.rontoseconds;
+// Fractional durations (on double or num)
+final halfMinute = 0.5.minutes;
+final fractionalDays = 2.5.days;
+final fortnights = 1.5.fortnights;
+
+// Convenient async delay
+await 500.ms.delay();
+
+// Duration utilities
+final myDuration = 2.weeks;
+print(myDuration.inWeeks); // 2
+print(1.decade.inYears); // 10
+
+// Returns PlanckDuration (sub-microsecond precision)
+final nano = 1.5.nanoseconds; // or 1.5.ns
+final pico = 500.picoseconds; // or 500.ps
+final femto = 20.fs;
+final yocto = 21.yoctoseconds;
+
+// PlanckDuration arithmetic & comparison
+final sum = 1.ns + 0.5.ns; // 1.5 nanoseconds
+print(1.ns < 2.ns); // true
+final duration = nano.toDuration(); // converted to standard Duration
+final backToPlanck = duration.toPlanckDuration();
 ```
 
 ## Complete list of units

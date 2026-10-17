@@ -135,8 +135,23 @@ class PlanckDuration implements Comparable<PlanckDuration> {
     return PlanckDuration._(plancks);
   }
 
+  /// Creates a new [PlanckDuration] from a standard [Duration].
+  ///
+  /// The [duration] must not be negative.
+  factory PlanckDuration.fromDuration(Duration duration) {
+    if (duration.isNegative) {
+      throw ArgumentError('Duration cannot be negative: $duration');
+    }
+    return PlanckDuration.fromPlancks(
+      duration.inMicroseconds * PLANCKS_IN_MICROSECOND,
+    );
+  }
+
   /// Internal constructor for fast instantiation.
   const PlanckDuration._(this._plancks);
+
+  /// A duration of zero planck times.
+  static const PlanckDuration zero = PlanckDuration._(0);
 
   /// Validates input parameters and calculates total planck times.
   static double _validateAndCalculate(
@@ -335,6 +350,51 @@ class PlanckDuration implements Comparable<PlanckDuration> {
   /// Returns a new [PlanckDuration] representing the divided duration.
   PlanckDuration operator /(double divisor) =>
       PlanckDuration.fromPlancks(_plancks / divisor);
+
+  /// Truncating division of this [PlanckDuration] by [divisor].
+  PlanckDuration operator ~/(num divisor) {
+    if (divisor <= 0) {
+      throw ArgumentError('Divisor must be positive: $divisor');
+    }
+    return PlanckDuration.fromPlancks((_plancks / divisor).truncateToDouble());
+  }
+
+  /// Calculates the modulo remainder of this [PlanckDuration] divided by
+  /// [other].
+  PlanckDuration operator %(PlanckDuration other) {
+    if (other._plancks <= 0) {
+      throw ArgumentError('Modulo operand must be positive: $other');
+    }
+    return PlanckDuration.fromPlancks(_plancks % other._plancks);
+  }
+
+  /// Returns the remainder of dividing this [PlanckDuration] by [other].
+  PlanckDuration remainder(PlanckDuration other) => this % other;
+
+  /// Returns whether this duration is equal to zero planck times.
+  bool get isZero => _plancks == 0;
+
+  /// Returns the absolute duration (which is identical, as [PlanckDuration]
+  /// cannot be negative).
+  PlanckDuration abs() => PlanckDuration.fromPlancks(_plancks);
+
+  /// Clamps this duration between [min] and [max].
+  PlanckDuration clamp(PlanckDuration min, PlanckDuration max) {
+    if (min > max) {
+      throw ArgumentError('min ($min) cannot be greater than max ($max)');
+    }
+    if (this < min) return min;
+    if (this > max) return max;
+    return this;
+  }
+
+  /// Adds a standard [Duration] to this [PlanckDuration].
+  PlanckDuration addDuration(Duration duration) =>
+      this + PlanckDuration.fromDuration(duration);
+
+  /// Subtracts a standard [Duration] from this [PlanckDuration].
+  PlanckDuration subtractDuration(Duration duration) =>
+      this - PlanckDuration.fromDuration(duration);
 
   /// Returns true if this [PlanckDuration] is less than [other].
   bool operator <(PlanckDuration other) => _plancks < other._plancks;

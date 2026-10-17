@@ -587,5 +587,269 @@ void main() {
         equals(2 * MICROSECONDS_FOR_CROM),
       );
     });
+
+    test('should support singular and shorthand getters', () {
+      expect(10.us, equals(10.microseconds));
+      expect(1.microsecond, equals(1.microseconds));
+      expect(1.millisecond, equals(1.milliseconds));
+      expect(1.second, equals(1.seconds));
+      expect(1.minute, equals(1.minutes));
+      expect(1.hour, equals(1.hours));
+      expect(1.day, equals(1.days));
+      expect(1.week, equals(1.weeks));
+      expect(1.year, equals(1.years));
+      expect(1.ns, equals(1.nanoseconds));
+      expect(1.nanosecond, equals(1.nanoseconds));
+      expect(1.ps, equals(1.picoseconds));
+      expect(1.picosecond, equals(1.picoseconds));
+      expect(1.fs, equals(1.femtoseconds));
+      expect(1.femtosecond, equals(1.femtoseconds));
+      expect(1.planck, equals(1.plancks));
+      expect(1.quectosecond, equals(1.quectoseconds));
+      expect(1.rontosecond, equals(1.rontoseconds));
+      expect(1.yoctosecond, equals(1.yoctoseconds));
+      expect(1.physicsJiffy, equals(1.jiffyPhysics));
+      expect(1.physicsJiffys, equals(1.jiffyPhysics));
+      expect(1.zeptoseconds, equals(1.zeptosecond));
+      expect(1.attosecond, equals(1.attoseconds));
+      expect(1.atomic, equals(1.atomics));
+      expect(1.svedberg, equals(1.svedbergs));
+      expect(1.shake, equals(1.shakes));
+      expect(1.centisecond, equals(1.centiseconds));
+      expect(1.decisecond, equals(1.deciseconds));
+      expect(1.decasecond, equals(1.decaseconds));
+      expect(1.hectosecond, equals(1.hectoseconds));
+      expect(1.moment, equals(1.moments));
+      expect(1.kilosecond, equals(1.kiloseconds));
+      expect(1.megasecond, equals(1.megaseconds));
+      expect(1.gigasecond, equals(1.gigaseconds));
+      expect(1.terasecond, equals(1.teraseconds));
+      expect(1.petasecond, equals(1.petaseconds));
+      expect(1.exasecond, equals(1.exaseconds));
+      expect(1.zettasecond, equals(1.zettaseconds));
+      expect(1.yottasecond, equals(1.yottaseconds));
+      expect(1.ronnasecond, equals(1.ronnaseconds));
+      expect(1.quettasecond, equals(1.quettaseconds));
+      expect(1.monthFebruary, equals(1.monthFeb));
+      expect(1.monthLeapFebruary, equals(1.monthLeapFeb));
+      expect(1.millidays, equals(1.milliday));
+      expect(1.centidays, equals(1.centiday));
+      expect(1.decidays, equals(1.deciday));
+      expect(1.decadays, equals(1.decaday));
+      expect(1.fortnights, equals(1.fortnight));
+      expect(1.quarantines, equals(1.quarantine));
+      expect(1.hectodays, equals(1.hectoday));
+      expect(1.lunarYears, equals(1.lunarYear));
+      expect(1.leapYears, equals(1.leapYear));
+      expect(1.tropicalYears, equals(1.tropicalYear));
+      expect(1.gregorianYears, equals(1.gregorianYear));
+      expect(1.siderealYears, equals(1.siderealYear));
+      expect(1.semesters, equals(1.semester));
+      expect(1.olympiads, equals(1.olympiad));
+      expect(1.lustrums, equals(1.lustrum));
+      expect(1.decades, equals(1.decade));
+      expect(1.indictions, equals(1.indiction));
+      expect(1.jubilees, equals(1.jubilee));
+      expect(1.centuries, equals(1.century));
+      expect(1.millennium, equals(1.millenia));
+      expect(1.millennia, equals(1.millenia));
+      expect(1.ages, equals(1.age));
+      expect(1.megaannums, equals(1.megaannum));
+      expect(1.galacticYears, equals(1.galacticYear));
+      expect(1.eons, equals(1.eon));
+      expect(1.kalpas, equals(1.kalpa));
+      expect(1.decimalSecond, equals(1.decimalSeconds));
+      expect(1.decimalMinute, equals(1.decimalMinutes));
+      expect(1.decimalHour, equals(1.decimalHours));
+      expect(1.decimalDay, equals(1.decimalDays));
+      expect(1.conanTheBarbarian, equals(1.conanTheBarbarians));
+    });
+  });
+
+  group('SimpleDurationsDouble extended units', () {
+    test('supports all units and shorthands on double', () {
+      expect(1.5.us, equals(const Duration(microseconds: 2)));
+      expect(1.5.um, equals(const Duration(microseconds: 2)));
+      expect(1.5.microsecond, equals(const Duration(microseconds: 2)));
+      expect(1.0.s, equals(1.0.second));
+      expect(1.0.m, equals(1.0.minute));
+      expect(1.0.h, equals(1.0.hour));
+      expect(1.0.d, equals(1.0.day));
+      expect(1.0.w, equals(1.0.week));
+      expect(1.0.y, equals(1.0.year));
+      expect(1.0.planck, equals(1.0.plancks));
+      expect(1.0.quectosecond, equals(1.0.quectoseconds));
+      expect(1.0.rontosecond, equals(1.0.rontoseconds));
+      expect(1.0.yoctosecond, equals(1.0.yoctoseconds));
+      expect(1.0.physicsJiffy, equals(1.0.jiffyPhysics));
+      expect(1.0.physicsJiffys, equals(1.0.jiffyPhysics));
+      expect(1.0.zeptoseconds, equals(1.0.zeptosecond));
+      expect(1.0.attosecond, equals(1.0.attoseconds));
+      expect(1.0.atomic, equals(1.0.atomics));
+      expect(1.0.fs, equals(1.0.femtoseconds));
+      expect(1.0.femtosecond, equals(1.0.femtoseconds));
+      expect(1.0.svedberg, equals(1.0.svedbergs));
+      expect(1.0.ps, equals(1.0.picoseconds));
+      expect(1.0.picosecond, equals(1.0.picoseconds));
+      expect(1.0.ns, equals(1.0.nanoseconds));
+      expect(1.0.nanosecond, equals(1.0.nanoseconds));
+      expect(1.0.shake, equals(1.0.shakes));
+      expect(1.0.centisecond, equals(1.0.centiseconds));
+      expect(1.0.decisecond, equals(1.0.deciseconds));
+      expect(1.0.decasecond, equals(1.0.decaseconds));
+      expect(1.0.hectosecond, equals(1.0.hectoseconds));
+      expect(1.0.moment, equals(1.0.moments));
+      expect(1.0.kilosecond, equals(1.0.kiloseconds));
+      expect(1.0.megasecond, equals(1.0.megaseconds));
+      expect(1.0.gigasecond, equals(1.0.gigaseconds));
+      expect(1.0.terasecond, equals(1.0.teraseconds));
+      expect(1.0.petasecond, equals(1.0.petaseconds));
+      expect(1.0.exasecond, equals(1.0.exaseconds));
+      expect(1.0.zettasecond, equals(1.0.zettaseconds));
+      expect(1.0.yottasecond, equals(1.0.yottaseconds));
+      expect(1.0.ronnasecond, equals(1.0.ronnaseconds));
+      expect(1.0.quettasecond, equals(1.0.quettaseconds));
+      expect(1.0.Mf, equals(1.0.monthFeb));
+      expect(1.0.monthFebruary, equals(1.0.monthFeb));
+      expect(1.0.Mlf, equals(1.0.monthLeapFeb));
+      expect(1.0.monthLeapFebruary, equals(1.0.monthLeapFeb));
+      expect(1.0.M30, equals(1.0.month30));
+      expect(1.0.M31, equals(1.0.month31));
+      expect(1.0.milliday, equals(1.0.millidays));
+      expect(1.0.centiday, equals(1.0.centidays));
+      expect(1.0.deciday, equals(1.0.decidays));
+      expect(1.0.decaday, equals(1.0.decadays));
+      expect(1.0.fortnight, equals(1.0.fortnights));
+      expect(1.0.quarantine, equals(1.0.quarantines));
+      expect(1.0.hectoday, equals(1.0.hectodays));
+      expect(1.0.lunarYear, equals(1.0.lunarYears));
+      expect(1.0.leapYear, equals(1.0.leapYears));
+      expect(1.0.tropicalYear, equals(1.0.tropicalYears));
+      expect(1.0.gregorianYear, equals(1.0.gregorianYears));
+      expect(1.0.siderealYear, equals(1.0.siderealYears));
+      expect(1.0.semester, equals(1.0.semesters));
+      expect(1.0.olympiad, equals(1.0.olympiads));
+      expect(1.0.lustrum, equals(1.0.lustrums));
+      expect(1.0.decade, equals(1.0.decades));
+      expect(1.0.indiction, equals(1.0.indictions));
+      expect(1.0.jubilee, equals(1.0.jubilees));
+      expect(1.0.century, equals(1.0.centuries));
+      expect(1.0.millennium, equals(1.0.millenia));
+      expect(1.0.millennia, equals(1.0.millenia));
+      expect(1.0.age, equals(1.0.ages));
+      expect(1.0.megaannum, equals(1.0.megaannums));
+      expect(1.0.galacticYear, equals(1.0.galacticYears));
+      expect(1.0.eon, equals(1.0.eons));
+      expect(1.0.kalpa, equals(1.0.kalpas));
+      expect(1.0.decimalSecond, equals(1.0.decimalSeconds));
+      expect(1.0.decimalMinute, equals(1.0.decimalMinutes));
+      expect(1.0.decimalHour, equals(1.0.decimalHours));
+      expect(1.0.decimalDay, equals(1.0.decimalDays));
+      expect(1.0.conanTheBarbarian, equals(1.0.conanTheBarbarians));
+    });
+
+    test('fractional calculations are accurate', () {
+      expect(0.5.days, equals(const Duration(hours: 12)));
+      expect(0.5.weeks, equals(const Duration(days: 3, hours: 12)));
+      expect(0.5.fortnights, equals(const Duration(days: 7)));
+      expect(0.5.decades, equals(const Duration(days: 1825)));
+    });
+  });
+
+  group('SimpleDurationsNum', () {
+    test('works on num typed variables', () {
+      const num n1 = 5;
+      const num n2 = 2.5;
+
+      expect(n1.us, equals(const Duration(microseconds: 5)));
+      expect(n1.um, equals(const Duration(microseconds: 5)));
+      expect(n1.microsecond, equals(const Duration(microseconds: 5)));
+      expect(n1.microseconds, equals(const Duration(microseconds: 5)));
+      expect(n1.ms, equals(const Duration(milliseconds: 5)));
+      expect(n1.millisecond, equals(const Duration(milliseconds: 5)));
+      expect(n1.milliseconds, equals(const Duration(milliseconds: 5)));
+      expect(n1.s, equals(const Duration(seconds: 5)));
+      expect(n1.second, equals(const Duration(seconds: 5)));
+      expect(n1.seconds, equals(const Duration(seconds: 5)));
+      expect(n1.m, equals(const Duration(minutes: 5)));
+      expect(n1.minute, equals(const Duration(minutes: 5)));
+      expect(n1.minutes, equals(const Duration(minutes: 5)));
+      expect(n1.h, equals(const Duration(hours: 5)));
+      expect(n1.hour, equals(const Duration(hours: 5)));
+      expect(n1.hours, equals(const Duration(hours: 5)));
+      expect(n1.d, equals(const Duration(days: 5)));
+      expect(n1.day, equals(const Duration(days: 5)));
+      expect(n1.days, equals(const Duration(days: 5)));
+      expect(n1.w, equals(const Duration(days: 35)));
+      expect(n1.week, equals(const Duration(days: 35)));
+      expect(n1.weeks, equals(const Duration(days: 35)));
+      expect(n1.y, equals(const Duration(days: 1825)));
+      expect(n1.year, equals(const Duration(days: 1825)));
+      expect(n1.years, equals(const Duration(days: 1825)));
+      expect(n1.planck, equals(PlanckDuration.fromPlancks(5)));
+      expect(n1.plancks, equals(PlanckDuration.fromPlancks(5)));
+      expect(n1.ns, equals(PlanckDuration(nanoseconds: 5)));
+      expect(n1.nanosecond, equals(PlanckDuration(nanoseconds: 5)));
+      expect(n1.nanoseconds, equals(PlanckDuration(nanoseconds: 5)));
+      expect(n1.ps, equals(PlanckDuration(picoseconds: 5)));
+      expect(n1.picosecond, equals(PlanckDuration(picoseconds: 5)));
+      expect(n1.picoseconds, equals(PlanckDuration(picoseconds: 5)));
+      expect(n1.fs, equals(PlanckDuration(femtoseconds: 5)));
+      expect(n1.femtosecond, equals(PlanckDuration(femtoseconds: 5)));
+      expect(n1.femtoseconds, equals(PlanckDuration(femtoseconds: 5)));
+      expect(n1.zeptosecond, equals(PlanckDuration(zeptoseconds: 5)));
+      expect(n1.zeptoseconds, equals(PlanckDuration(zeptoseconds: 5)));
+
+      expect(n2.seconds, equals(const Duration(milliseconds: 2500)));
+    });
+  });
+
+  group('DurationUtilities', () {
+    test('conversion to PlanckDuration', () {
+      const dur = Duration(milliseconds: 10);
+      final planckDur = dur.toPlanckDuration();
+      expect(planckDur.inMilliseconds, closeTo(10, 1e-9));
+    });
+
+    test('delay executes as expected', () async {
+      final sw = Stopwatch()..start();
+      await 10.ms.delay();
+      sw.stop();
+      expect(sw.elapsedMilliseconds, greaterThanOrEqualTo(5));
+    });
+
+    test('duration units calculations', () {
+      final fortnight = 1.fortnight;
+      expect(fortnight.inWeeks, equals(2));
+      expect(fortnight.inFractionalWeeks, closeTo(2.0, 1e-9));
+      expect(fortnight.inFortnights, equals(1));
+      expect(fortnight.inFractionalFortnights, closeTo(1.0, 1e-9));
+
+      final decade = 1.decade;
+      expect(decade.inYears, equals(10));
+      expect(decade.inFractionalYears, closeTo(10.0, 1e-9));
+      expect(decade.inDecades, equals(1));
+      expect(decade.inFractionalDecades, closeTo(1.0, 1e-9));
+
+      final century = 1.century;
+      expect(century.inCenturies, equals(1));
+      expect(century.inFractionalCenturies, closeTo(1.0, 1e-9));
+    });
+  });
+
+  group('Planck unit consistency', () {
+    test(
+      '1 second corresponds exactly to 1000 milliseconds and 1e9 nanoseconds',
+      () {
+        final s = PlanckDuration(seconds: 1);
+        expect(s.inMilliseconds, closeTo(1000.0, 1e-9));
+        expect(s.inMicroseconds, closeTo(1000000.0, 1e-6));
+        expect(s.inNanoseconds, closeTo(1000000000.0, 1e-4));
+        expect(
+          1.seconds.toPlanckDuration(),
+          equals(1000.milliseconds.toPlanckDuration()),
+        );
+      },
+    );
   });
 }

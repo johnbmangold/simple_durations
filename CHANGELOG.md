@@ -5,9 +5,28 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [2.2.0] - 2026-10-17
 
-## [2.1.1] - 2026-01-18
+### Added
+- Singular and plural naming support for all units (e.g. `1.second` and `5.seconds`, `1.day` and `3.days`, `1.fortnight` and `2.fortnights`, `1.nanosecond` and `10.nanoseconds`).
+- Shorthand getters for sub-microsecond units: `ns` (nanoseconds), `ps` (picoseconds), `fs` (femtoseconds), and standard `us` for microseconds (alongside `um`).
+- Full unit parity for `SimpleDurationsDouble` (calendar, astronomical, historical, and custom units like `fortnights`, `decades`, `centuries`, `conanTheBarbarians`, etc.).
+- `SimpleDurationsNum` extension on `num` to support durations on generic or numeric supertypes.
+- `DurationUtilities` extension on standard `Duration`:
+  - `toPlanckDuration()` for converting `Duration` to `PlanckDuration`.
+  - `delay()` for concise asynchronous delays (`await 500.ms.delay()`).
+  - Unit getters: `inWeeks`, `inYears`, `inFortnights`, `inDecades`, `inCenturies`, and their fractional representations.
+- `PlanckDuration` enhancements:
+  - `PlanckDuration.zero` constant constructor.
+  - `PlanckDuration.fromDuration(Duration duration)` constructor.
+  - Truncating division (`~/`), modulo (`%`), and `remainder()`.
+  - Helper methods: `isZero`, `abs()`, `clamp()`, `addDuration()`, and `subtractDuration()`.
+- Test coverage expanded to over 99%.
+
+### Fixed
+- Fixed missing `15.us` getter referenced in documentation.
+- Fixed missing plural `zeptoseconds` getter on extensions.
+- Aligned sub-second Planck conversion constants in `constants.dart` so SI units scale by exact powers of 10 from base seconds.
 
 ### Fixed
 - Internal linting issues and code consistency across `lib`, `test`, and `example`.

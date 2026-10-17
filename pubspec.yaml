@@ -1,6 +1,6 @@
 name: simple_durations
-description: "Extensions on int to easily create Durations directly from ints. Can be used for units as small as planck time all the way up to galactic years and beyond."
-version: 2.1.1
+description: "Extensions on num, int, double, and Duration to easily create, convert, and format Durations. Supports units from planck time to galactic years, shorthands, and async delays."
+version: 2.2.0
 repository: https://github.com/johnbmangold/simple_durations
 issue_tracker: https://github.com/johnbmangold/simple_durations/issues
 
