@@ -5,21 +5,15 @@ void main() {
   group('PlanckDuration', () {
     test('onCompare compares correctly', () {
       expect(
-        PlanckDuration(
-          plancks: 10,
-        ).compareTo(PlanckDuration(plancks: 5)),
+        PlanckDuration(plancks: 10).compareTo(PlanckDuration(plancks: 5)),
         isPositive,
       );
       expect(
-        PlanckDuration(
-          plancks: 10,
-        ).compareTo(PlanckDuration(plancks: 10)),
+        PlanckDuration(plancks: 10).compareTo(PlanckDuration(plancks: 10)),
         isZero,
       );
       expect(
-        PlanckDuration(
-          plancks: 10,
-        ).compareTo(PlanckDuration(plancks: 15)),
+        PlanckDuration(plancks: 10).compareTo(PlanckDuration(plancks: 15)),
         isNegative,
       );
     });
@@ -36,10 +30,7 @@ void main() {
     });
 
     test('quectoseconds', () {
-      expect(
-        PlanckDuration(quectoseconds: 10).inQuectoseconds,
-        equals(10),
-      );
+      expect(PlanckDuration(quectoseconds: 10).inQuectoseconds, equals(10));
     });
 
     test('rontoseconds', () {
@@ -51,10 +42,7 @@ void main() {
     });
 
     test('physicsJiffy', () {
-      expect(
-        PlanckDuration(physicsJiffys: 10).inPhysicsJiffy,
-        equals(10),
-      );
+      expect(PlanckDuration(physicsJiffys: 10).inPhysicsJiffy, equals(10));
     });
 
     test('zeptoseconds', () {
@@ -189,18 +177,12 @@ void main() {
     });
 
     test('constructor validates negative values', () {
-      expect(
-        () => PlanckDuration(seconds: -1),
-        throwsA(isA<ArgumentError>()),
-      );
+      expect(() => PlanckDuration(seconds: -1), throwsA(isA<ArgumentError>()));
       expect(
         () => PlanckDuration(milliseconds: -1),
         throwsA(isA<ArgumentError>()),
       );
-      expect(
-        () => PlanckDuration(plancks: -1),
-        throwsA(isA<ArgumentError>()),
-      );
+      expect(() => PlanckDuration(plancks: -1), throwsA(isA<ArgumentError>()));
       expect(
         () => PlanckDuration(physicsJiffys: -1),
         throwsA(isA<ArgumentError>()),

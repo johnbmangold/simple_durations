@@ -136,7 +136,7 @@ class PlanckDuration implements Comparable<PlanckDuration> {
   }
 
   /// Internal constructor for fast instantiation.
-  PlanckDuration._(this._plancks);
+  const PlanckDuration._(this._plancks);
 
   /// Validates input parameters and calculates total planck times.
   static double _validateAndCalculate(

@@ -2,8 +2,8 @@
 // ignore_for_file: non_constant_identifier_names
 library;
 
-import 'constants.dart';
-import 'planck_duration.dart';
+import 'package:simple_durations/src/constants.dart';
+import 'package:simple_durations/src/planck_duration.dart';
 
 /// An extension on [int] that provides a convenient way to create [Duration]
 /// objects from integers.
